@@ -1,0 +1,128 @@
+help(max)
+a
+a = [11 33 22]
+    b = [12 2 44;
+         41 5 26]
+a
+argmax(a)
+argmax(2)
+argmax(b)
+ones(3,3,3)
+ones(3,3)
+argmax(ones(3,3,3))
+argmax(ones(3,3,3))
+argmax(ones(3,3))
+argmax(ones(3))
+argmax
+argf
+argf
+argmax(b)
+argmax(ones(3))
+argmax(ones(3,3))
+argmax(ones(3,3,3))
+rand(3,3,3)
+argmax(rand(3,3,3)
+)
+a
+a
+a=[11 33 22]
+a=[11,33,22]
+argmax(a)
+argmax(2)
+ind(2)
+indmax(2)
+max(2)
+type(Real)
+.
+help(Real)
+argmax(2)
+argmax(2)
+argmax(2)
+ones(3,3,3)
+reshape(1:12, 2,2,3)
+reshape(1:6, 2,2,2)
+reshape(1:6, 2,2,2)
+reshape(1:6, 2,2,2)
+reshape(1:6, 2,2,2)
+reshape(1:12, 2,2,3)
+threedim = reshape(1:12, 2,2,3)
+argmax(threedim)
+argmin([])
+argmin(5)
+a
+b
+scalar = 5
+    array = [27, 33, 16]
+    vector = [11 33 22]
+    matrix = [12 2 44;
+              41 5 26]
+    threedim = reshape(5:16, 2,2,3)
+argmax(array)
+array
+argmin(vector)
+vec(vector)
+ind(vec(vector))
+indmax(vec(vector))
+isvector(vector)
+isvector(1:5)
+isvector([1,2])
+isvector
+isvector([1,2])
+typeof([1:2])
+typeof([1,2])
+isa([1,2],AbstractArray{Any,1})
+isa([1,2],AbstractArray{Int32,1})
+isvector([1,2])
+isa([1,2],AbstractArray{Any,1})
+isa([1,2],AbstractArray{Int32,1})
+isvector
+isvector{Int32}([1,2])
+isvector(Int32)([1,2])
+isvector{Int32}
+typeof([1,2])
+isa([1,2],AbstractArray{Any,1})
+argmin(2)
+argmin(scalar)
+argmin(array)
+argmax(array)
+argmin(vector)
+isvector(array)
+isvector(vector)
+vec(vector)
+indmax(vec(vector))
+argmin(vector)
+scalar = 5
+    array = [27, 33, 16]
+    vector = [11 33 22]
+    matrix = [12 2 44;
+              41 5 26]
+    threedim = reshape(5:16, 2,2,3)
+argmin(scalar)
+include("general.jl")
+argmin(scalar)
+argmin(vector)
+argmin(matrix)
+x = argmin(matrix)
+x,y = argmin(matrix)
+x
+x = [1 1 2]
+x,y = argmin(matrix)
+x == [1 1 2]
+x == [1 1 2]
+argmax(matrix)
+x = argmax(matrix)
+x == ([2 2 1], [41 5 44])
+argmax(threedim)
+x = argmax(threedim)
+using PyCall
+@pyimport scipy.special as sp
+sp.betainc(1,1,1)
+betaXGreaterBetaY(1,1,1,1)
+betaXGreaterBetaY(1,2,3,4)
+betaXGreaterBetaY(1,2,3,4)
+betaXGreaterBetaY(1,2,3,4)
+m
+prob
+delta
+q
+n
