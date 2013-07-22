@@ -126,3 +126,214 @@ prob
 delta
 q
 n
+betaXGreaterBetaY(1,2,3,4)
+dist
+prob
+delta
+dist .^ (xAlpha-1) .* (1-dist) .^ (xBeta-1)
+                       .* sp.betainc(dist,yAlpha,yBeta)
+dist .^ (xAlpha-1) .* (1-dist) .^ (xBeta-1) .* sp.betainc(dist,yAlpha,yBeta)
+sp.betainc(dist,1,1)
+sp.betainc(dist,yAlpha,yBeta)
+yAlpha
+yBeta
+sp.betainc(dist,3,4)
+sp.betainc(dist,0.1,0.2)
+sp.betainc(2,0.1,0.2)
+beta(2,3)
+sp.beta(2,3)
+sp.betaln
+sp.betaln(2)
+sp.betaln(2,3)
+beta(2,3)
+log(beta(2,3))
+q
+betaXGreaterBetaY(1,2,3,4)
+betaXGreaterBetaY(1,2,3,4)
+avgSigmaGauss(1,2)
+avgSigmaGauss(1,2)
+avgSigmaGauss(12.3,45.6)
+help(help)
+help("Getting Around")
+edit(help)
+cap
+x = [1 2 3]
+find(x>1)
+find(x.>1)
+find(1.>0)
+x = [-4 2 5]
+cap(x,2)
+x
+y=[-4 2 5]
+cap(y,2)
+y
+cap(y,2)
+y
+y = [-4 2 5]
+cap(y,2)
+y
+x
+y
+y=[-4 2 5]
+y
+cap(y,2)
+y
+isa([0.2], AbstractArray{Real})
+isa([0.2], AbstractArray)
+help(max)
+chi2test
+chi2test(1,2)
+chi2test([1],2)
+chi2test{Real}([1],2)
+AbstractVector
+isa(1,AbstracVector)
+isa(1,AbstractVector)
+isa([1],AbstractVector)
+typeof([1])
+typeof([1 2])
+typeof([1,2])
+isa([1 2],AbstractVector)
+isa([1,2],AbstractVector)
+Scalar
+typeof(1)
+help(Int32)
+help(Signed)
+help(Integer)
+help(Real)
+help(Number)
+Type{Int32}
+typeof(ans)
+help(AbstractArray)
+argmax(2)
+argmax([1 2 3])
+argmax([1,2,3])
+help(Any)
+help(Number)
+help(Char)
+help(String)
+argmax(2)
+argmax([2])
+argmax(2)
+argmax([2])
+vec(2)
+[2]
+ind()
+indmax()
+indmax(2)
+argmax()
+argmax([])
+indval([])
+ones(size[1,2,3])
+ones(size([1,2,3]))
+typeof(ans)
+["hello"]
+typeof(ans)
+a = [33 2 44; 11 49 6]
+logsumexp(a)
+logsumexp(a)
+logsumexp(a,3)
+logsumexp([1,2],3)
+a
+logsumexp(a, rand(2,3))
+logsumexp(a, a)
+logsumexp(a, a)
+typeof([0:0.1:10])
+a
+b
+r = [0:0.1:10]
+typeof(r)
+isa(r,AbstractVector)
+x
+x = [-22 55 6]
+cap(x,10)
+x
+a
+mapslices(max,a,1)
+bsxfun
+rdivide
+./
+mapslices(sum, a, 1)
+condexp(a)
+condexp(2)
+mapslices(sum,[1,2,3],1)
+condexp(2)
+condexp([1 2 3])
+a
+b = [22 -5 6]
+condexp(b)
+mapslices(max,b,1)
+size(b,1)
+repmat(b,1,1)
+b - ans
+exp(ans)
+condp(ans)
+c = [1 1 1]
+condp(c)
+max(c)
+c ./ 1
+c = ans
+mapslices(sum,c,1)
+sum(c[:])
+a
+sum(a[:])
+sum(a)
+General.argmin
+quit()
+argmin
+argmin
+General.argmin
+g = General
+g.argmin
+argmin
+g
+g.argmin
+argmin
+argmax
+c
+a
+[1 2 3]
+typeof(ans)
+a = [33 2 44;11 49 6]
+b = [22 -5 6]
+typeof(b)
+isa(AbstractVector, b)
+isa(b, AbstractVector)
+size(b)
+isa(b', AbstractVector)
+b'
+typeof(b')
+size(b')
+condexp(a)
+g.condexp(a)
+g.condexp(b)
+g.condp(c)
+g.condp(b)
+max(b)
+b ./ 22
+isvector(b)
+isvector(b)
+b./22
+bsxfun(./, ans, sum(ans))
+condp(b)
+condexp(b)
+sum(b)
+b
+sum(b')
+mapslices(sum,b,1)
+mapslices(sum,b',1)
+condp(b)
+condp(b')
+condp(vec(b))
+vec(b)
+condexp(b)
+condexp(b')
+condexp(b)
+condp(b)
+condp(b)
+b
+isvector(b)
+b./max(b)
+max(b)
+b./ans
+bsxfun(./,ans,sum(ans))
+condp(b)
