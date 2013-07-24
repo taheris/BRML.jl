@@ -1,11 +1,18 @@
-#module General
+include("types.jl")
+include("helpers.jl")
+include("variables.jl")
+
+
+module General
 
 using PyCall
 using Debug
 
-@pyimport scipy.special as sps
+export argmin, argmax, logsumexp, betaXGreaterBetaY, avgSigmaGauss, cap, condexp,
+condp, dirRand
 
-include("helpers.jl")
+@pyimport numpy.random as npr
+@pyimport scipy.special as sps
 
 
 # argmin/argmax: returns a tuple of positions and values
@@ -15,19 +22,16 @@ argmax(A) = indval(indmax, max, A)
 
 # indval: applies index and value functions to an argument
 indval(ind::Function, val::Function, a::Number) = ind(a), val(a)
-indval(ind::Function, val::Function, A::AbstractVector) = ind(A), val(A)
-indval(ind::Function, val::Function, A::AbstractArray) =
+indval(ind::Function, val::Function, A::NumVector) = ind(A), val(A)
+indval(ind::Function, val::Function, A::NumMatrix) =
     mapslices(ind, A, 1), mapslices(val, A, 1)
 
 # logsumexp: computes log(sum(exp(a) .* b))
 logsumexp(a::Number, b::Number=1) = logsumexp([a], [b])
-logsumexp(A::AbstractArray, b::Number=1) = logsumexp(A, b*ones(size(A)))
-logsumexp(A::AbstractVector, B::AbstractArray) = begin
-    max_val = max(A)
-    exp_diff = exp(A - max_val)
-    return max_val + log(sum(exp_diff .* B))
-end
-logsumexp(A::AbstractArray, B::AbstractArray) = begin
+logsumexp(A::NumArray, b::Number=1) = logsumexp(A, b*ones(size(A)))
+logsumexp(A::NumVector, B::NumVector) = max(A) + log(sum(exp(A-max(A)) .* B))
+
+function logsumexp(A::NumMatrix, B::NumMatrix)
     max_vals = mapslices(max, A, 1)
     rep_max = repmat(max_vals, size(A,1), 1)
     exp_diff = exp(A - rep_max)
@@ -53,7 +57,7 @@ end
 
 # cap: limits each x item to an absolute value c
 cap(x::Number, c::Number) = abs(x) > c ? c*sign(x) : x
-cap(x::AbstractArray, c::Number) = begin
+cap(x::NumArray, c::Number) = begin
     out = copy(x)
     indices = find(abs(out) .> c)
     out[indices] = c * sign(out[indices])
@@ -61,50 +65,70 @@ cap(x::AbstractArray, c::Number) = begin
 end
 
 # chi2test: inverse of the chi square cumulative density
-# TODO: incomplete
-function chi2test{T<:Real}(k::AbstractArray{T}, significance::Real,
-                           range::AbstractVector=[0:0.1:1000]')
-    out = Array(eltype(k), (1,length(k)))
-    for i = 1:length(k)
-        y = condexp((k[i]/2 - 1) .* log(range+eps()) - range/2)
-        indices = find(cumsum(y) .> 1 - significance)
-        out[i] = range[indices[1]]
-    end
-    return out
-end
+#function chi2test{T<:Real}(k::NumMatrix{T}, significance::Real,
+#                           range::NumVector=[0:0.1:1000]')
+#    out = Array(eltype(k), (1,length(k)))
+#    for i = 1:length(k)
+#        y = condexp((k[i]/2 - 1) .* log(range+eps()) - range/2)
+#        indices = find(cumsum(y) .> 1 - significance)
+#        out[i] = range[indices[1]]
+#    end
+#    return out
+#end
 
 # condexp: compute p proportional to exp(logp)
-condexp(logp::Number) = condexp([logp])
-function condexp{T<:Real}(logp::AbstractArray{T})
-    pmax = [mapslices(max, logp, 1)]
+function condexp(logp::NumArray)
+    pmax = mapslices(max, logp, 1)
     P = size(logp, 1)
     return condp(exp(logp - repmat(pmax, P, 1)))
 end
 
 # condp: make a conditional distribution from an array
-function condp(pin::AbstractArray)
+function condp(pin::NumVector, i::Indices=[])
+    m = max(pin) 
+    p = m > 0 ? pin ./ m : pin + eps
+    if isempty(i)
+        return bsxfun(./, p, sum(p)) 
+    elseif i == 0
+        return p ./ sum(p)
+    end
+    
+end
+
+function condp(pin::NumMatrix, i::Indices=[])
     m = max(pin)
     p = m > 0 ? pin ./ m : pin + eps
-    if isvector(pin)
-        return bsxfun(./, p, sum(p)) 
-    else
+    if isempty(i)
         return bsxfun(./, p, mapslices(sum,p,1))
+    elseif i == 0
+        return p ./ sum(p)
     end
+    
 end
 
-#function count(data::AbstractArray, states::Number)
+##function count(data::NumMatrix, states::Number)
+#
+##ind2subv: subscript vector from linear index
+#function ind2subv(arraySize::NumMatrix, index::NumMatrix)
+#    k = [1 cumprod(arraySize[1:end-1])]
+#    out = Array(eltype(index), size(index))
+#    for i = length(arraySize):-1:1
+#        vi = rem(index-1, k[i]) + 1
+#        vj = (index - vi) ./ k[i] + 1
+#        out[:, i] = vj
+#        index = vi
+#    end
+#    return out
+#end
 
-#ind2subv: subscript vector from linear index
-function ind2subv(arraySize::AbstractArray, index::AbstractArray)
-    k = [1 cumprod(arraySize[1:end-1])]
-    out = Array(eltype(index), size(index))
-    for i = length(arraySize):-1:1
-        vi = rem(index-1, k[i]) + 1
-        vj = (index - vi) ./ k[i] + 1
-        out[:, i] = vj
-        index = vi
+#dirRand: draw n samples from a Dirichlet distribution
+function dirRand(alpha::NumVector, n::Number)
+    r = zeros(length(alpha), n)
+    for k = 1:length(alpha)
+        r[k, :] = npr.gamma(alpha[k], 1, n)
     end
-    return out
+    return r ./ repmat(mapslices(sum,r,1), length(alpha), 1)
 end
 
-#end # module
+
+end # module

@@ -1,3 +1,6 @@
+module Helpers
+
+
 function isvector(A::AbstractArray)
     if ndims(A) == 1 || ndims(A) == 2 && (size(A, 1) == 1 || size(A, 2) == 1)
         true
@@ -5,3 +8,6 @@ function isvector(A::AbstractArray)
         false
     end
 end
+
+
+end # module

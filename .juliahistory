@@ -1,134 +1,3 @@
-help(max)
-a
-a = [11 33 22]
-    b = [12 2 44;
-         41 5 26]
-a
-argmax(a)
-argmax(2)
-argmax(b)
-ones(3,3,3)
-ones(3,3)
-argmax(ones(3,3,3))
-argmax(ones(3,3,3))
-argmax(ones(3,3))
-argmax(ones(3))
-argmax
-argf
-argf
-argmax(b)
-argmax(ones(3))
-argmax(ones(3,3))
-argmax(ones(3,3,3))
-rand(3,3,3)
-argmax(rand(3,3,3)
-)
-a
-a
-a=[11 33 22]
-a=[11,33,22]
-argmax(a)
-argmax(2)
-ind(2)
-indmax(2)
-max(2)
-type(Real)
-.
-help(Real)
-argmax(2)
-argmax(2)
-argmax(2)
-ones(3,3,3)
-reshape(1:12, 2,2,3)
-reshape(1:6, 2,2,2)
-reshape(1:6, 2,2,2)
-reshape(1:6, 2,2,2)
-reshape(1:6, 2,2,2)
-reshape(1:12, 2,2,3)
-threedim = reshape(1:12, 2,2,3)
-argmax(threedim)
-argmin([])
-argmin(5)
-a
-b
-scalar = 5
-    array = [27, 33, 16]
-    vector = [11 33 22]
-    matrix = [12 2 44;
-              41 5 26]
-    threedim = reshape(5:16, 2,2,3)
-argmax(array)
-array
-argmin(vector)
-vec(vector)
-ind(vec(vector))
-indmax(vec(vector))
-isvector(vector)
-isvector(1:5)
-isvector([1,2])
-isvector
-isvector([1,2])
-typeof([1:2])
-typeof([1,2])
-isa([1,2],AbstractArray{Any,1})
-isa([1,2],AbstractArray{Int32,1})
-isvector([1,2])
-isa([1,2],AbstractArray{Any,1})
-isa([1,2],AbstractArray{Int32,1})
-isvector
-isvector{Int32}([1,2])
-isvector(Int32)([1,2])
-isvector{Int32}
-typeof([1,2])
-isa([1,2],AbstractArray{Any,1})
-argmin(2)
-argmin(scalar)
-argmin(array)
-argmax(array)
-argmin(vector)
-isvector(array)
-isvector(vector)
-vec(vector)
-indmax(vec(vector))
-argmin(vector)
-scalar = 5
-    array = [27, 33, 16]
-    vector = [11 33 22]
-    matrix = [12 2 44;
-              41 5 26]
-    threedim = reshape(5:16, 2,2,3)
-argmin(scalar)
-include("general.jl")
-argmin(scalar)
-argmin(vector)
-argmin(matrix)
-x = argmin(matrix)
-x,y = argmin(matrix)
-x
-x = [1 1 2]
-x,y = argmin(matrix)
-x == [1 1 2]
-x == [1 1 2]
-argmax(matrix)
-x = argmax(matrix)
-x == ([2 2 1], [41 5 44])
-argmax(threedim)
-x = argmax(threedim)
-using PyCall
-@pyimport scipy.special as sp
-sp.betainc(1,1,1)
-betaXGreaterBetaY(1,1,1,1)
-betaXGreaterBetaY(1,2,3,4)
-betaXGreaterBetaY(1,2,3,4)
-betaXGreaterBetaY(1,2,3,4)
-m
-prob
-delta
-q
-n
-betaXGreaterBetaY(1,2,3,4)
-dist
-prob
 delta
 dist .^ (xAlpha-1) .* (1-dist) .^ (xBeta-1)
                        .* sp.betainc(dist,yAlpha,yBeta)
@@ -337,3 +206,298 @@ max(b)
 b./ans
 bsxfun(./,ans,sum(ans))
 condp(b)
+a
+> condexp(a)
+condexp(a)
+npr.gamma(2,2)
+npr.gamma(a, 2)
+npr.gamma(a, 2)
+npr.gamma(2, 2)
+npr.gamma(2, 2)
+npr.gamma(2, 2)
+npr.gamma(2, 2)
+npr.gamma(2, 2)
+npr.gamma(2, 2)
+npr.gamma(2, 2)
+npr.gamma(2, 2)
+npr.gamma(2, 2)
+npr.gamma(2, 2)
+npr.gamma(2, 2)
+npr.gamma(2, 2)
+npr.gamma(2, 2)
+npr.gamma(2, 2)
+npr.gamma(2, 2)
+npr.gamma(2, 2,)
+npr.gamma(2, 2, 2)
+npr.gamma(2, 2, 2 2)
+npr.gamma(2, 2, 2)
+npr.gamma(2, 2, 2)
+npr.gamma(2, 2, 2)
+npr.gamma(2, 2, 2)
+length(b)
+dirRand(b,2)
+b[1]
+npr.gamma(b[1],1,2)
+npr.gamma(b[1],1,2)
+npr.gamma(b[1],1,1)
+npr.gamma(-5,1,1)
+npr.gamma(5,1,1)
+dirRand([3 12 1], 1, 2)
+dirRand([3 12 1], 2)
+dirRand([3 12 1], 2)
+s
+r
+s
+r
+s
+s
+b[1]
+npr.gamma(4,1,2)
+dirRand([3 12 1], 2)
+s
+s
+s
+s
+r = zeros(3,2)
+r[1]
+r[1, 1]
+r[1,:]
+dirRand([3 12 1], 2)
+s
+s
+s
+npr.gamma(alpha[k],1,n)
+s
+s
+s
+r
+mapslices(sum,r,1)
+repmat(mapslices(sum,r,1),length(alpha),1)
+s
+dirRand([3 12 1], 2)
+dirRand([3 12 1], 2)
+dirRand([3 12 1], 2)
+zeros(3)
+dirrand(zeros(3),2)
+dirRand(zeros(3),2)
+dirRand(zeros(1,3),2)
+zeros(1,3)
+b
+dirRand(ones(3,3),2)
+ones(3,3)
+length(ones(3,3))
+size(ones(3,3))
+a
+length(a)
+size(a)
+size(a,2)
+dirRand(ones(3,3),2)
+size(ones(3,3),2)
+zeros(3,2)
+ones(3,3)[1]
+ones(3,3)[2]
+ones(3,3)[3]
+ones(3,3)[4]
+dirRand(ones(3),2)
+dirRand(ones(3),2)
+ dirRand([2 3 4], 2)
+dirRand(a,2)
+dirRand(ones(3), 2)
+g = General
+g.dirRand(ones(3), 2)
+g.dirRand([2 3 4], 2)
+typeof(AbstractVector)
+help(AbstractVector)
+help(Top)
+edit(Top)
+Top
+typeof(Top)
+describe
+desc
+logsumexp(a)
+g.logsumexp(a)
+a = [23 -44 16;18 21 0]
+b=[-5 9 26]
+g.logsumexp(a)
+g.logsumexp(b)
+g.logsumexp(b)
+g.logsumexp(b)
+g.logsumexp(a)
+b
+g.logsumexp(b)
+g.logsumexp(vec(b))
+abstract NumVector <: AbstractVector 
+help(AbstractArray)
+
+a = [2.2 23.3 8.9; 1.1 9.6 4.5]
+
+b = [3.1 2.5 8.8]
+
+c = [6.2, 1.8, 2.5]
+logsumexp(a)
+g.logsumexp(a)
+g.logsumexp(b)
+g.logsumexp(vec(b))
+g.logsumexp(c)
+g.logsumexp(c,2.2)
+g.cap(c,3)
+g.cap(b,3)
+ g.condexp(a)
+g.condexp(b)
+g.condexp(c)
+c
+max(c)
+c-max(c)
+repmat(max(c),length(c),1)
+repmat
+c.-max(c)
+c.condexp(a)
+c.condexp(b)
+g.condexp(a)
+g.condexp(b)
+g.condexp(c)
+c
+condp(exp(c-max(c)))
+g.condp(exp(c-max(c)))
+g.condp(exp(c-max(c)))
+g.condp
+g.condexp(c)
+g.condexp
+mapslices(max,c,1)
+c
+b
+mapslices(max,b,1)
+max(b)
+mapslices(max,c,2)
+repmat(8.8, 3,1)
+mapslices(max,c,1)
+typeof(ans)
+g.condexp
+g.condexp(c)
+g.condexp
+g=General
+a
+c
+a = [2.2 23.3 8.9; 1.1 9.6 4.5]
+b = [3.1 2.5 8.8]
+c = [6.2, 1.8, 2.5]
+g.condexp
+g.condexp(c)
+typeof(c)
+isa(c,Array)
+isa(c,AbstractArray)
+g.condexp(b)
+g.condexp(a)
+g.condexp
+isa(2,Number)
+isa(1.2,Number)
+typeof(a)
+g.condexp
+g.condexp(a)
+isa(a,AbstractArray{Number,N})
+isa(a,AbstractArray{Number,})
+isa(a,AbstractArray{Number})
+isa(a,AbstractArray{Number,2})
+g.logsumexp(a)
+g.logsumexp
+g.logsumexp
+g.logsumexp(a)
+g.logsumexp(a)
+g.logsumexp
+g.logsumexp(a, ones(size(a)))
+g.logsumexp(a, ones(size(a)))
+g.logsumexp
+g=General
+g.logsumexp
+g.logsumexp(a)
+g.logsumexp(a, ones(size(a)))
+g.logsumexp
+g.logsumexp(a, ones(size(a)))
+g.logsumexp(a)
+help(None)
+help(Int)
+isa(2,Integer)
+isa(2,Int)
+g.logsumexp 
+g.logsumexp
+g=General
+g.logsumexp
+g.logsumexp(a)
+g.logsumexp
+g.logsumexp
+g.logsumexp(a)
+isa(a,Array{Float64,2})
+isa(a,AbstractArray{Float64,2})
+isa(a,AbstractArray{Number,2})
+isa(a,AbstractArray{,2})
+at
+isa(a,AbstractArray{Float64,2})
+isa(a,AbstractArray{Float64,Int})
+isa(a,NumMatrix) 
+isa(a,NumArray)
+isa(a,g.NumArray)
+g.logsumexp(a)
+g.logsumexp
+g.logsumexp(a) 
+g.logsumexp(b)
+g.logsumexp(c)
+g.logsumexp(vec(b))
+help(String)
+help(ASCIIString)
+help(DirectIndexString)
+help(UTF8String)
+using General
+logsumexp
+logsumexp
+using General
+logsumexp
+isempty([])
+isempty()
+isempty(0)
+isempty
+setdiff
+setdiff(a,b)
+a
+b
+setdiff(b,c)
+c
+b
+setdiff(b,c)
+1+1
+a
+ndims(a)
+Array(Int,2)
+dims
+ndims
+ndims(1)
+ndims(2)
+ndims([1])
+ndims([1,2])
+ndims(c)
+size(1)
+size(c)
+size(c,1)
+c
+tuple(c)
+tuple(c...)
+ccall((:gethostname, "libc"), Int32, (Ptr{Uint8}, Uint), hostname, length(hostname))
+load
+loadpath
+ENV
+LOAD_PATH
+ccall
+ccall((:argmax, "c:/Users/Shaun/code/julia/project/argmax.dll"), Float64, ())
+ccall((:clocl, "libc"), Int32, ())
+ccall((:g_type_init, "libgobject-2.0"), Void, ())
+ccall((:clock, "libc"), Int32, ())
+ccall((:clock, "libc"md), Int32, ())
+ccall((:clock, "libcamd"), Int32, ())
+ccall((:clock, "c:/libcamd"), Int32, ())
+ccall((:clock, "C:/users/shaun/programs/julia/lib/julia/libcamd"), Int32, ())
+ccall((:clock, "C:/users/shaun/programs/julia/lib/julia/libcamd"), Int32, ()
+)
+ccall((:clock, "C:/users/shaun/programs/julia/lib/julia/libcamd.dll"), Int32, ())
+ccall((:clock, "C:/users/shaun/programs/julia/lib/julia/libcamd.dll"), Int32, ())
+ccall((:clock, "C:/users/shaun/programs/julia/lib/julia/libcamd.dlll"), Int32, ())
+ccall((:clock, "C:/users/shaun/programs/julia/lib/julia/libcamd.dll"), Int32, ())
+ccall((:, "C:/users/shaun/programs/julia/lib/julia/libcamd.dll"), Int32, ())
