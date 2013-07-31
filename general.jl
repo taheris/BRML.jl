@@ -1,15 +1,5 @@
-include("types.jl")
-include("helpers.jl")
-include("variables.jl")
-
-
-module General
-
 using PyCall
 using Debug
-
-export argmin, argmax, logsumexp, betaXGreaterBetaY, avgSigmaGauss, cap, condexp,
-condp, dirRand
 
 @pyimport numpy.random as npr
 @pyimport scipy.special as sps
@@ -20,11 +10,8 @@ condp, dirRand
 argmin(A) = indval(indmin, min, A)
 argmax(A) = indval(indmax, max, A)
 
-# indval: applies index and value functions to an argument
-indval(ind::Function, val::Function, a::Number) = ind(a), val(a)
-indval(ind::Function, val::Function, A::NumVector) = ind(A), val(A)
-indval(ind::Function, val::Function, A::NumMatrix) =
-    mapslices(ind, A, 1), mapslices(val, A, 1)
+# bar3z: plot a 3D bar plot of the matrix Z
+bar3z(Z::NumArray) = mxcall(:bar3zcolor, 1, Z)
 
 # logsumexp: computes log(sum(exp(a) .* b))
 logsumexp(a::Number, b::Number=1) = logsumexp([a], [b])
@@ -65,6 +52,20 @@ cap(x::NumArray, c::Number) = begin
 end
 
 # chi2test: inverse of the chi square cumulative density
+chi2test{T<:Real}(k::NumArray{T}, significance::Real) =
+    mxcall(:chi2test, 1, k, significance)
+
+# stateCount: return state counts for a data matrix where each column is a datapoint
+function stateCount(data::NumMatrix, states::NumArray)
+    @mput data states
+    @matlab begin
+        # convert to double to avoid combination error with rem function
+        [cidx states] = count(double(data), double(states))
+    end
+    @mget cidx states
+    return cidx, states
+end
+
 #function chi2test{T<:Real}(k::NumMatrix{T}, significance::Real,
 #                           range::NumVector=[0:0.1:1000]')
 #    out = Array(eltype(k), (1,length(k)))
@@ -84,44 +85,21 @@ function condexp(logp::NumArray)
 end
 
 # condp: make a conditional distribution from an array
-function condp(pin::NumVector, i::Indices=[])
+function condp(pin::NumVector)
     m = max(pin) 
     p = m > 0 ? pin ./ m : pin + eps
-    if isempty(i)
-        return bsxfun(./, p, sum(p)) 
-    elseif i == 0
-        return p ./ sum(p)
-    end
-    
+    return bsxfun(./, p, sum(p)) 
 end
 
-function condp(pin::NumMatrix, i::Indices=[])
+function condp(pin::NumMatrix)
     m = max(pin)
     p = m > 0 ? pin ./ m : pin + eps
-    if isempty(i)
-        return bsxfun(./, p, mapslices(sum,p,1))
-    elseif i == 0
-        return p ./ sum(p)
-    end
-    
+    return bsxfun(./, p, mapslices(sum,p,1))
 end
 
-##function count(data::NumMatrix, states::Number)
-#
-##ind2subv: subscript vector from linear index
-#function ind2subv(arraySize::NumMatrix, index::NumMatrix)
-#    k = [1 cumprod(arraySize[1:end-1])]
-#    out = Array(eltype(index), size(index))
-#    for i = length(arraySize):-1:1
-#        vi = rem(index-1, k[i]) + 1
-#        vj = (index - vi) ./ k[i] + 1
-#        out[:, i] = vj
-#        index = vi
-#    end
-#    return out
-#end
+condp(pin::NumArray, i::Indices) = mxcall(:condp, 1, pin, i)
 
-#dirRand: draw n samples from a Dirichlet distribution
+# dirRand: draw n samples from a Dirichlet distribution
 function dirRand(alpha::NumVector, n::Number)
     r = zeros(length(alpha), n)
     for k = 1:length(alpha)
@@ -129,6 +107,3 @@ function dirRand(alpha::NumVector, n::Number)
     end
     return r ./ repmat(mapslices(sum,r,1), length(alpha), 1)
 end
-
-
-end # module

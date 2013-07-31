@@ -1,13 +1,15 @@
-module Helpers
+# indval: applies index and value functions to an argument
+indval(ind::Function, val::Function, a::Number) = ind(a), val(a)
+indval(ind::Function, val::Function, A::NumVector) = ind(A), val(A)
+indval(ind::Function, val::Function, A::NumMatrix) =
+    mapslices(ind, A, 1), mapslices(val, A, 1)
 
 
+# isvector: boolean indicating whether 1 dimension is of size 1
 function isvector(A::AbstractArray)
     if ndims(A) == 1 || ndims(A) == 2 && (size(A, 1) == 1 || size(A, 2) == 1)
-        true
+        return true
     else
-        false
+        return false
     end
 end
-
-
-end # module
