@@ -51,5 +51,4 @@ facts("Testing General Functions") do
             @fact sum(x[:,i]) => roughly(1)
         end
     end
-    
 end
