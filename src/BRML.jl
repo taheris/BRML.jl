@@ -8,7 +8,7 @@ include("general_matlab.jl")
 export
     # general.jl
     argmin, argmax, logsumexp, betaXGreaterBetaY, avgSigmaGauss, cap,
-    condexp
+    condexp, dirRand
 
     # general_matlab.jl
     bar3z, chi2test, condp, stateCount
