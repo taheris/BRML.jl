@@ -1,6 +1,3 @@
-argmin
-argmax
-c
 a
 [1 2 3]
 typeof(ans)
@@ -498,3 +495,6 @@ require("c:/Users/Shaun/code/julia/project/general.jl")
 chi2test
 restart()
 exit()
+include("c:/Users/shaun/skydrive/code/julia/brml/test/general.jl")
+1
+n
