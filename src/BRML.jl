@@ -1,9 +1,5 @@
 module BRML
 
-using Debug
-using PyCall
-using MATLAB
-
 include("matlab.jl")
 include("types.jl")
 include("general.jl")

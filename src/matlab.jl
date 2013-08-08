@@ -1,3 +1,6 @@
+using MATLAB
+
+
 const buffer_size = 2 * 1024 # 2kb
 
 # connect to MATLAB engine and intialise BRML toolbox
