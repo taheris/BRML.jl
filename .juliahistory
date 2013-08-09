@@ -1,53 +1,3 @@
-npr.gamma(2, 2, 2)
-length(b)
-dirRand(b,2)
-b[1]
-npr.gamma(b[1],1,2)
-npr.gamma(b[1],1,2)
-npr.gamma(b[1],1,1)
-npr.gamma(-5,1,1)
-npr.gamma(5,1,1)
-dirRand([3 12 1], 1, 2)
-dirRand([3 12 1], 2)
-dirRand([3 12 1], 2)
-s
-r
-s
-r
-s
-s
-b[1]
-npr.gamma(4,1,2)
-dirRand([3 12 1], 2)
-s
-s
-s
-s
-r = zeros(3,2)
-r[1]
-r[1, 1]
-r[1,:]
-dirRand([3 12 1], 2)
-s
-s
-s
-npr.gamma(alpha[k],1,n)
-s
-s
-s
-r
-mapslices(sum,r,1)
-repmat(mapslices(sum,r,1),length(alpha),1)
-s
-dirRand([3 12 1], 2)
-dirRand([3 12 1], 2)
-dirRand([3 12 1], 2)
-zeros(3)
-dirrand(zeros(3),2)
-dirRand(zeros(3),2)
-dirRand(zeros(1,3),2)
-zeros(1,3)
-b
 dirRand(ones(3,3),2)
 ones(3,3)
 length(ones(3,3))
@@ -498,3 +448,53 @@ using BRML
 argmin
 using BRML
 argmin
+using BRML
+argmin
+chi2test([1:5],0.1)
+argmin
+chi2test
+bar3z 
+argmin
+argmin
+us
+using BRML
+argmin
+bar3z
+chi2test([1:5],0.1)
+chi2test(double([1:5]),0.1)
+double(1)
+[1:5]
+[1.0:5]
+chi2test([1.0:5],0.1)
+float([1:5])
+using BRML
+chi2test([1:5],0.1)
+bar3z(rand(3))
+bar3z([1:5])
+pwd()
+cwd()
+pwd()
+pwd()
+x = pwd()
+pwd[1]
+pwd(1)
+pwd[1:]
+x[1]
+x[3]
+x[4]
+pwd()
+x
+x = pwd9)
+x=pwd()
+x
+x.replace
+replace
+replace(x,'\\','/')
+replace(pwd(), '\\', '/')
+cwd()
+pwd()
+:/Users/Shaun/code/matlab/brml
+replace(pwd(), '\\', '/')
+pwd()
+env
+ENV

@@ -11,7 +11,7 @@ bar3z(Z::NumArray) = mxcall(:bar3zcolor, 1, Z)
 
 # chi2test: inverse of the chi square cumulative density
 chi2test{T<:Real}(k::NumArray{T}, significance::Real) =
-    mxcall(:chi2test, 1, k, significance)
+    mxcall(:chi2test, 1, float(k), significance)
 
 # stateCount: return state counts for a data matrix where each column is a datapoint
 function stateCount(data::NumMatrix, states::NumArray)
