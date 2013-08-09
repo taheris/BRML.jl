@@ -61,7 +61,11 @@ end
 #end
 
 # condexp: compute p proportional to exp(logp)
-function condexp(logp::NumArray)
+function condexp(logp::NumVector)
+    return condp(exp(logp - repmat(logp, 1, 1)))
+end
+
+function condexp(logp::NumMatrix)
     pmax = mapslices(max, logp, 1)
     P = size(logp, 1)
     return condp(exp(logp - repmat(pmax, P, 1)))

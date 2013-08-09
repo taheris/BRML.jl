@@ -1,143 +1,3 @@
-dirRand(ones(3,3),2)
-ones(3,3)
-length(ones(3,3))
-size(ones(3,3))
-a
-length(a)
-size(a)
-size(a,2)
-dirRand(ones(3,3),2)
-size(ones(3,3),2)
-zeros(3,2)
-ones(3,3)[1]
-ones(3,3)[2]
-ones(3,3)[3]
-ones(3,3)[4]
-dirRand(ones(3),2)
-dirRand(ones(3),2)
- dirRand([2 3 4], 2)
-dirRand(a,2)
-dirRand(ones(3), 2)
-g = General
-g.dirRand(ones(3), 2)
-g.dirRand([2 3 4], 2)
-typeof(AbstractVector)
-help(AbstractVector)
-help(Top)
-edit(Top)
-Top
-typeof(Top)
-describe
-desc
-logsumexp(a)
-g.logsumexp(a)
-a = [23 -44 16;18 21 0]
-b=[-5 9 26]
-g.logsumexp(a)
-g.logsumexp(b)
-g.logsumexp(b)
-g.logsumexp(b)
-g.logsumexp(a)
-b
-g.logsumexp(b)
-g.logsumexp(vec(b))
-abstract NumVector <: AbstractVector 
-help(AbstractArray)
-
-a = [2.2 23.3 8.9; 1.1 9.6 4.5]
-
-b = [3.1 2.5 8.8]
-
-c = [6.2, 1.8, 2.5]
-logsumexp(a)
-g.logsumexp(a)
-g.logsumexp(b)
-g.logsumexp(vec(b))
-g.logsumexp(c)
-g.logsumexp(c,2.2)
-g.cap(c,3)
-g.cap(b,3)
- g.condexp(a)
-g.condexp(b)
-g.condexp(c)
-c
-max(c)
-c-max(c)
-repmat(max(c),length(c),1)
-repmat
-c.-max(c)
-c.condexp(a)
-c.condexp(b)
-g.condexp(a)
-g.condexp(b)
-g.condexp(c)
-c
-condp(exp(c-max(c)))
-g.condp(exp(c-max(c)))
-g.condp(exp(c-max(c)))
-g.condp
-g.condexp(c)
-g.condexp
-mapslices(max,c,1)
-c
-b
-mapslices(max,b,1)
-max(b)
-mapslices(max,c,2)
-repmat(8.8, 3,1)
-mapslices(max,c,1)
-typeof(ans)
-g.condexp
-g.condexp(c)
-g.condexp
-g=General
-a
-c
-a = [2.2 23.3 8.9; 1.1 9.6 4.5]
-b = [3.1 2.5 8.8]
-c = [6.2, 1.8, 2.5]
-g.condexp
-g.condexp(c)
-typeof(c)
-isa(c,Array)
-isa(c,AbstractArray)
-g.condexp(b)
-g.condexp(a)
-g.condexp
-isa(2,Number)
-isa(1.2,Number)
-typeof(a)
-g.condexp
-g.condexp(a)
-isa(a,AbstractArray{Number,N})
-isa(a,AbstractArray{Number,})
-isa(a,AbstractArray{Number})
-isa(a,AbstractArray{Number,2})
-g.logsumexp(a)
-g.logsumexp
-g.logsumexp
-g.logsumexp(a)
-g.logsumexp(a)
-g.logsumexp
-g.logsumexp(a, ones(size(a)))
-g.logsumexp(a, ones(size(a)))
-g.logsumexp
-g=General
-g.logsumexp
-g.logsumexp(a)
-g.logsumexp(a, ones(size(a)))
-g.logsumexp
-g.logsumexp(a, ones(size(a)))
-g.logsumexp(a)
-help(None)
-help(Int)
-isa(2,Integer)
-isa(2,Int)
-g.logsumexp 
-g.logsumexp
-g=General
-g.logsumexp
-g.logsumexp(a)
 g.logsumexp
 g.logsumexp
 g.logsumexp(a)
@@ -498,3 +358,149 @@ replace(pwd(), '\\', '/')
 pwd()
 env
 ENV
+pwd() + 'a'
+join(pwd(), 'a')
+cat
+strcat
+string('a','b')
+string(pwd(), 'matlab')
+string(pwd(), "matlab")
+string(pwd(), "/matlab")
+argmin
+using BRML
+argmin
+count([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+get_default_msession()
+MATLAB.get_default_msession()
+MATLAB.default_mession
+MATLAB.default_msession
+MATLAB.default_msession
+count([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+using BRML
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+using BRML
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+1+1
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+using BRML
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+using BRML
+help(reload)
+help(import)
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+using BRML
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+using BRML
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+using BRML
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+1+1
+argmin
+BRML.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+BRML.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+using BRML
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+using BRML
+using BRML
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+reload("c:/Users/shaun/skydrive/code/julia/brml/src/BRML.jl")
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+b.stateCount
+b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+using b
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+using b
+using b
+stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+using b
+b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
+1+1
+include("c:/Users/shaun/skydrive/code/julia/brml/test/test_general_matlab.jl")
+([1,2,2,1], [1 1; 2 1; 1 2; 2 2])
+    scalar = 5
+    array = [27, 33, 16]
+    vector = [11, 33, 22]
+    matrix = [12 2 44;
+              41 5 26]
+    threedim = reshape(5:16, 2,2,3)
+
+condp(matrix,0)
+condp(matrix)
+condp(matrix,[0])
+condp(vector)
+condp(matrix,0)
+MATLAB.default_msession
+n
+Pkg2.update()
+Pkg2.add("IPython")
+Pkg2.update()
+Pkg2.add("IJulia")
+ENV["LOAD_PATH"]
+ENV
+LOAD_PATH
+Pkg2.add("PyPlot")
+using PyPlot
+    scalar = 5
+    array = [27, 33, 16]
+    vector = [11, 33, 22]
+    matrix = [12 2 44;
+              41 5 26]
+    threedim = reshape(5:16, 2,2,3)
+
+b.condexp
+b.condexp(scalar)
+b.condexp(vector)
+repmat
+mapslices(max,vector,1)
+vector
+mapslices(max,matrix,1)
+condexp(matrix)
+typeof(vec(1))
+[1]
+typeof([1])
+typeof([1,2,3])
+typeof([[1,2,3]])
+[[1,2,3]]
+b.condexp(vector)
+b.condexp(matrix)
+b.condexp(vector)
+b.condexp(vec(vector))
+vector
+b.condexp([11 33 22])
+mapslices(max, [11 33 22], 1)
+size([11 33 22], 1)
+a = [11 33 22]
+repmat(mapslices(max,a,1),size(a,1),1)
+a-ans
+exp(ans)
+condp(ans)

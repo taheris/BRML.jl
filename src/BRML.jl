@@ -14,3 +14,5 @@ export
     bar3z, chi2test, condp, stateCount
 
 end # module
+
+b = BRML

@@ -15,12 +15,13 @@ chi2test{T<:Real}(k::NumArray{T}, significance::Real) =
 
 # stateCount: return state counts for a data matrix where each column is a datapoint
 function stateCount(data::NumMatrix, states::NumArray)
+    data = float(data)
+    states = float(states)
+    
     @mput data states
-    @matlab begin
-        # convert to double to avoid combination error with rem function
-        [cidx states] = count(double(data), double(states))
-    end
-    @mget cidx states
+    eval_string("[cidx states] = count(data, states);")
+    @mget cidx states;
+    
     return cidx, states
 end
 
@@ -37,4 +38,4 @@ function condp(pin::NumMatrix)
     return bsxfun(./, p, mapslices(sum,p,1))
 end
 
-condp(pin::NumArray, i::Indices) = mxcall(:condp, 1, pin, i)
+condp(pin::NumArray, i::Indices) = mxcall(:condp, 1, float(pin), i)
