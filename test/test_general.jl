@@ -56,4 +56,9 @@ facts("Testing General Functions") do
             @fact sum(x[:,i]) => roughly(1)
         end
     end
+
+    context("sigma") do
+        @fact sigma(vector) => roughly([0.999983, 1, 1])
+        @fact sigma(matrix) => roughly([0.999994 0.880797 1; 1 0.993307 1])
+    end
 end

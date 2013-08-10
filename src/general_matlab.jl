@@ -39,3 +39,7 @@ function condp(pin::NumMatrix)
 end
 
 condp(pin::NumArray, i::Indices) = mxcall(:condp, 1, float(pin), i)
+
+# plotCov: returns points for plotting an ellipse of a covariance
+plotCov(mean::NumVector, covariance::SymTridiagonal, length::Real) =
+    mxcall(:plotCov, 1, mean, covariance, length)

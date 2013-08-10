@@ -1,506 +1,322 @@
-g.logsumexp
-g.logsumexp
-g.logsumexp(a)
-isa(a,Array{Float64,2})
-isa(a,AbstractArray{Float64,2})
-isa(a,AbstractArray{Number,2})
-isa(a,AbstractArray{,2})
-at
-isa(a,AbstractArray{Float64,2})
-isa(a,AbstractArray{Float64,Int})
-isa(a,NumMatrix) 
-isa(a,NumArray)
-isa(a,g.NumArray)
-g.logsumexp(a)
-g.logsumexp
-g.logsumexp(a) 
-g.logsumexp(b)
-g.logsumexp(c)
-g.logsumexp(vec(b))
-help(String)
-help(ASCIIString)
-help(DirectIndexString)
-help(UTF8String)
-using General
-logsumexp
-logsumexp
-using General
-logsumexp
-isempty([])
-isempty()
-isempty(0)
-isempty
-setdiff
-setdiff(a,b)
+r = rand(2,3)
+b.SquareMatrix(r)
+b.SquareMatrix(r)
+r = rand(2,3)
+r = rand(2,2)
+a = b.SquareMatrix(r)
+typeof(a)
+typeof(r)
+help(b.SquareMatrix)
+size(r)
+size(a)
+b.size(a)
+size(a)
+b.size
+b.size
+b.size(a)
+b.size(a)
+b.size
+size(a.M)
+size
+methods(size)
+b.size
+b.size(a)
 a
-b
-setdiff(b,c)
-c
-b
-setdiff(b,c)
-1+1
-a
+b.size(a)
+size(a)
+size(a)
+methods(size)
+repl_show(a)
+isa(Number, 1.2)
+isa(1.2, Number)
+help(Number)
+help(Float64)
+help(FloatingPoint)
+help(Real)
+size(a)
+methods(size)
+methods(size)
+methods(size)
+methods(size)
+r = rand(2,3)
+a = b.SquareMatrix(r)
+r = rand(2,2)
+a = b.SquareMatrix(r)
+size(a)
+methods(size)
+methods(size)
+size(a)
+show_repl(a)
+show(a)
+which(show, a)
+which(show, STDOUT, a)
+summart(a)
+summary(a)
+isempty(a)
+size(a)
+show(a)
 ndims(a)
-Array(Int,2)
-dims
-ndims
-ndims(1)
-ndims(2)
-ndims([1])
-ndims([1,2])
-ndims(c)
-size(1)
-size(c)
-size(c,1)
+print_matrix(STDOUT, a)
+which(print_matrix, a)
+which(print_matrix)
+which(print_matrix, STDOUT, a)
+tty_rows()
+which(print_matrix, STDOUT, a, 25, 25)
+print_matrix_row(STDOUT, a, 10, 1:2, " ")
+isassigned(a,1,1)
+a[1,1]
+a[1]
+a
+a = b.SquareMatrix(r)
+full(a)
+a.M
+which(full, a)
+which(print_matrix)
+size
+print_matrix
+full
+a
+a
+a  = b.SquareMatrix(r)
+a
+a  = b.SquareMatrix(r)
+a
+a * 2
+a[1]
+length(a)
+getindex(a,1)
+a = b.SquareMatrix(rand(3,2))
+a = b.SquareMatrix(rand(3,3))
+a*2
+b = convert(NumMatrix,a)
+b
+a2 = convert(b.NumMatrix, a)
+a2
+a
+a .* 2
+a * 2
+a
+a2
+a * a2
+a + a2
+a
+a2
+a + a2
+promote(a,a2)
+c = promote(a,a2)
 c
-tuple(c)
-tuple(c...)
-ccall((:gethostname, "libc"), Int32, (Ptr{Uint8}, Uint), hostname, length(hostname))
-load
-loadpath
-ENV
-LOAD_PATH
-ccall
-ccall((:argmax, "c:/Users/Shaun/code/julia/project/argmax.dll"), Float64, ())
-ccall((:clocl, "libc"), Int32, ())
-ccall((:g_type_init, "libgobject-2.0"), Void, ())
-ccall((:clock, "libc"), Int32, ())
-ccall((:clock, "libc"md), Int32, ())
-ccall((:clock, "libcamd"), Int32, ())
-ccall((:clock, "c:/libcamd"), Int32, ())
-ccall((:clock, "C:/users/shaun/programs/julia/lib/julia/libcamd"), Int32, ())
-ccall((:clock, "C:/users/shaun/programs/julia/lib/julia/libcamd"), Int32, ()
-)
-ccall((:clock, "C:/users/shaun/programs/julia/lib/julia/libcamd.dll"), Int32, ())
-ccall((:clock, "C:/users/shaun/programs/julia/lib/julia/libcamd.dll"), Int32, ())
-ccall((:clock, "C:/users/shaun/programs/julia/lib/julia/libcamd.dlll"), Int32, ())
-ccall((:clock, "C:/users/shaun/programs/julia/lib/julia/libcamd.dll"), Int32, ())
-ccall((:, "C:/users/shaun/programs/julia/lib/julia/libcamd.dll"), Int32, ())
-a = [2 19 4]
-b = [13 26 33;11 10 9]
-argmax(a)
-a=[12 33 9]
-b=[13 33 34;12 11 10]
-armin(a)
-argmin(a)
-argmin2(a)
-argmin(vec(a))
-argmax(a)
-argmax(vec(a))
-argmin2([1 2 3])
-using BRML
-argmin2([1 2 3])
-export
 a
+a + a2
+full(a)
+a = b.SquareMatrix(r)
+full(a)
 a
-exportall
-importall
+a2 = r
+a + a2
+isa(a2,NumMatrix)
+isa(a2,b.NumMatrix)
+isa(a2,Array)
+isa(a2,Array{Float64,2})
+a3 = convert(NumMatrix,a)
+a3=convert(b.NumMatrix,a)
 a
-logsumexp
-g = BRML
-g
-g.logsumexp
-g.argmin2([1:3])
-g.argmin([1:3])
-g.argmin([10 20 30])
-[1:3]
-a = g.argmin2([1:3])
+a2
+a3
+a2 + a3
+a'
+r = rand(2,2)
+a = b.SquareMatrix(r)
+a + r
+promote(a,r)
+promote(1.5,2)
++(promote(a,r))
+r + r
+typeof(r)
++(r,r)
++(a,r)
+r
 a
-typeof(a)
-typeof(a)
-reload("c:/Users/Shaun/dropbox/code/julia/project/general.jl")
-using BRML
-argmax2
-using BRML
-argmax3
-using MATLAB
-ABC
-isdefined("abc")
-isdefined(:abc)
-isdefined(:MATLAB)
-whos()
-MATLAB.whos()
-using MATLAB
-whos()
-isdefined(:MSession)
-get_default_msession()
-using MATLAB
-get_default_msession(0)
-get_default_msession
-get_default_msession(); 
-close_default_msession();
-get_default_msession();
-@matlab begin
-pwd()
-end
-get_default_msession(); 
-using MATLAB
-get_default_msession();
-@matlab begin
-Engine *ep;
-ep = engOpen(NULL);
-engSetVisible(ep, 0);
-end
-@matlab engSetVisible(0)
-session = get_default_msession()
-using MATLAB
-restart_default_msession(0)
-get_default_msession()
-get_default_msession().ep
-get_default_msession().ptr
-ep = get_default_msession().ptr
-ep
-ep.val
-@matlab engSetvisible(0x1009eb50, 0)
-val
-@matlab engSetvisible(0x1009eb50, 0)
-@matlab engSetvisible(0x1009eb50, 0)
-@matlab pwd()
-isdefined(:MATLAB)
-isdefined(:MATLAB)
-isdefined(get_current_msession)
-isdefined(get_default_msession)
-isdefined(:get_default_msession)
-isdefined(:MATLAB)
-isdefined(:a)
+r[1]
+r[1] = 0.5
+r
 a
-MATLAB
-typeof(ans)
-close_default_msession()
-include("matlab.jl")
-include("matlab.jl")
-include("matlab.jl")
-include("matlab.jl")
-include("matlab.jl")
-using BRML
-argmax
-BRML.argmax
-argmax
-argmax4
-argmax3
-argmax4([1:10])
-argmax4([1:10])
-argmax([1:10])
-10.0 == 10
-m_argmin
-argmin2
-x,y = [1 2]
-x
-y
-x,y = [1,2]
-x
-y
-x,y,z = [1,2]
-bar3z
-bar3z(a)
-bar3z([1:10])
-bar3z([1 2 3 4 5 6 7 8 9 10])
-chi2test(1:10,0.1)
-chi2test([1:10],0.1)
-bar3z(1:10)
-bar3z(1:10)
-bar3z([1:10])
-chi2test([1:10],0.2)
-bar3z([1:10])
-bar3z(1:10)
-bar3z([1:10])
-bar3z
-reload("c:/Users/shaun/dropbox/code/julia/project/general.jl")
-bar3z
-bar3z
-bar3z(1:10)
-x = 1:10
-typeof(x)
-isa(x,AbstractArray)
+-r
+r
+r*r
+r
+r /2
+r./2
+a
+a*r
+Matrix
+promote_type(Array,Matrix)
+promote_type(Matrix,b.SquareMatrix)
+help(Array)
+help(Array{Int32,2})
+help(Matrix)
+help(Type)
 help(AbstractArray)
-bar3z
-bar3z(1:10)
-isa(1:10,NumArray)
-help(NumArray)
-help(AbstractArray)
-bar3z
-bar3z(1:10)
-bar3z([1:10])
-chi2test
-load("c:/Users/sha
+promote_type(Diagonal,Matrix)
+Diagonal(rand(2,2))
+x = Diagonal(rand(2,2))
+y = rand(2,2)
+promote(x,y)
+x+y
+x*y
+y*x
+r = rand(2,2)
+a = b.SquareMatrix(r)
+a+a
+copy(a)
 a
-)
-"
-)
-require("c:/Users/Shaun/code/julia/project/general.jl")
-chi2test
-restart()
-exit()
-include("c:/Users/shaun/skydrive/code/julia/brml/test/general.jl")
-1
-n
-logsumexp
-using BRML
-logsumexp
-scalar
-    scalar = 5
-    array = [27, 33, 16]
-    vector = [11, 33, 22]
-    matrix = [12 2 44;
-              41 5 26]
-    threedim = reshape(5:16, 2,2,3)
-
-
-logsumexp
-logsumexp(scalar0
-)
-logsumexp(scalar)
-logsumexp(vector)
-logsumexp(matrix)
-logsumexp([])
-logsumexp(array)
-logsumexp(vector)
-logsumexp(matrix)
-roughly
-roughly(5)(5.1)
-roughly(5)(5.01)
-roughly(5)(5.001)
-roughly(5.01)(5.009)
-roughly(5)(4.99999999)
-roughly([5 6 7])([4.99999 5.999999 6.99999])
-roughly([5 6 7])([4.99999 5.999999 6])
-roughly([5,6,7])([4.99999 5.999999 6])
-roughly([5,6,7])([4.99999 5.999999 6.999999999])
-logsumexp(matrix)
-logsumexP(vector)
-logsumexp(vector)
-logsumexp(array)
-[x^2 for x in 1:10]
-typeof(ans)
-avgSigmaGauss(0.2, 0.3)
-avgSigmaGauss(0, 0)
-avgSigmaGauss()
-avgSigmaGauss(1)
-avgSigmaGauss(1:3,0.5)
-avgSigmaGauss([1:3], 0.5)
-avgSigmaGauss
-cap(-3, 2.5)
-cap([1:10], 5)
-cap([-5:5], 1)
-betaXbiggerY(0.1,0.2,0.3,0.4)
-betaXgreaterBetaY
-condexp(5)
-condexp(array)
-condexp(vector)
-condexp([1:10])
-dirRand(vector, 5)
-dirRand
-using BRML
-using "src/BRML"
-using src/BRML
-using
-BRML
-using("c:/Users/shaun/skydrive/code/julia/brml/src/BRML.jl")
-a
-1+1
+full(a)
+x
 y
-using BRML
-argmin
-using BRML
-argmin
-using BRML
-using BRML
-argmin
-using BRML
-argmin
-using BRML
-argmin
-chi2test([1:5],0.1)
-argmin
-chi2test
-bar3z 
-argmin
-argmin
-us
-using BRML
-argmin
-bar3z
-chi2test([1:5],0.1)
-chi2test(double([1:5]),0.1)
-double(1)
-[1:5]
-[1.0:5]
-chi2test([1.0:5],0.1)
-float([1:5])
-using BRML
-chi2test([1:5],0.1)
-bar3z(rand(3))
-bar3z([1:5])
-pwd()
-cwd()
-pwd()
-pwd()
-x = pwd()
-pwd[1]
-pwd(1)
-pwd[1:]
-x[1]
-x[3]
-x[4]
-pwd()
-x
-x = pwd9)
-x=pwd()
-x
-x.replace
-replace
-replace(x,'\\','/')
-replace(pwd(), '\\', '/')
-cwd()
-pwd()
-:/Users/Shaun/code/matlab/brml
-replace(pwd(), '\\', '/')
-pwd()
-env
-ENV
-pwd() + 'a'
-join(pwd(), 'a')
-cat
-strcat
-string('a','b')
-string(pwd(), 'matlab')
-string(pwd(), "matlab")
-string(pwd(), "/matlab")
-argmin
-using BRML
-argmin
-count([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-get_default_msession()
-MATLAB.get_default_msession()
-MATLAB.default_mession
-MATLAB.default_msession
-MATLAB.default_msession
-count([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-using BRML
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-using BRML
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-1+1
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-using BRML
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-using BRML
-help(reload)
-help(import)
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-using BRML
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-using BRML
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-using BRML
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-1+1
-argmin
-BRML.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-BRML.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-using BRML
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-using BRML
-using BRML
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-reload("c:/Users/shaun/skydrive/code/julia/brml/src/BRML.jl")
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-b.stateCount
-b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-using b
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-using b
-using b
-stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-using b
-b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-b.stateCount([1 2 1 2 1 2; 2 1 1 2 2 1], [2 2])
-1+1
-include("c:/Users/shaun/skydrive/code/julia/brml/test/test_general_matlab.jl")
-([1,2,2,1], [1 1; 2 1; 1 2; 2 2])
-    scalar = 5
-    array = [27, 33, 16]
-    vector = [11, 33, 22]
-    matrix = [12 2 44;
-              41 5 26]
-    threedim = reshape(5:16, 2,2,3)
-
-condp(matrix,0)
-condp(matrix)
-condp(matrix,[0])
-condp(vector)
-condp(matrix,0)
-MATLAB.default_msession
-n
-Pkg2.update()
-Pkg2.add("IPython")
-Pkg2.update()
-Pkg2.add("IJulia")
-ENV["LOAD_PATH"]
-ENV
-LOAD_PATH
-Pkg2.add("PyPlot")
-using PyPlot
-    scalar = 5
-    array = [27, 33, 16]
-    vector = [11, 33, 22]
-    matrix = [12 2 44;
-              41 5 26]
-    threedim = reshape(5:16, 2,2,3)
-
-b.condexp
-b.condexp(scalar)
-b.condexp(vector)
-repmat
-mapslices(max,vector,1)
-vector
-mapslices(max,matrix,1)
-condexp(matrix)
-typeof(vec(1))
-[1]
-typeof([1])
-typeof([1,2,3])
-typeof([[1,2,3]])
-[[1,2,3]]
-b.condexp(vector)
-b.condexp(matrix)
-b.condexp(vector)
-b.condexp(vec(vector))
-vector
-b.condexp([11 33 22])
-mapslices(max, [11 33 22], 1)
-size([11 33 22], 1)
-a = [11 33 22]
-repmat(mapslices(max,a,1),size(a,1),1)
-a-ans
-exp(ans)
-condp(ans)
+a+y
+y+y
+full(a)+y
+promote(a,y)
+promote_type(b.SquareMatrix,Matrix)
+convert(Matrix{Float64},a)
+a2 = convert(Matrix{Float64},a)
+a
+a2
+a+a2
+a2
+a2+a2
+a'
+a2'
+promote(a,a2)
+a = b.SquareMatrix(r)
+a2
+promote(a,a2)
+a+a2
++(promote(a,a2))
++((1,2))
+help(promote_array_type)
+a = b.SquareMatrix(r)
+a'
+a2 = convert(Matrix,a)
+a
+a2[1] = 0.5
+a
+a2
+promote_type(a,a2)
+promote_type(b.SquareMatrix,Matrix)
+methods(.*)
+nnz(a)
+a = b.SquareMatrix(r)
+a*2
+a+2
+a
+promote_type(SquareMatrix,Int32)
+promote_type(b.SquareMatrix,Int32)
+a
+a.M
+x = Hermitian(r)
+x*2
+x + 2
+find(a, 0.5)
+find(a)
+help(similar)
+r
+r[0.5]
+r[1]
+r[1.0]
+a = b.SquareMatrix(r)
+a
+a[1]
+a[2]
+a*2
+a[1:2]
+r[1:2]
+r[:]
+a[:]
+a[1] = 0.5
+a = b.SquareMatrix(r)
+a*2
+a = b.SquareMatrix(r)
+a*2
+a+1
+a
+a/2
+a = b.SquareMatrix(r)
+a+1
+a = b.SquareMatrix(r)
+a+1
+a*r
+r
+r*r
+a*2
+a.*2
+r*2
+r.*2
+a = b.SquareMatrix(r)
+a*r
+a.*r
+r*r
+r.*r
+a = b.SquareMatrix(r)
+a*r
+r*r
+a+1
+r = rand(2,2)
+a = b.SquareMatrix(r)
+a*2
+a.*2
+r*2
+r.*2
+r*r
+a*a
+a
+promote(a,2)
+promote(a,r)
+a = b.SquareMatrix(r)
+a*a
+a*r
+a.*r
+r.*r
+a = b.SquareMatrix(r)
+a*r
+a.*r
+r*r
+r.*r
+a = b.SquareMatrix(r)
+a+1
+a = b.SquareMatrix(r)
+a+1
+a = b.SquareMatrix(r)
+a+1
+r+1
+r*2
+a*2
+a.*2
+r.*2
+r*r
+a*a
+a = b.SquareMatrix(r)
+a*a
+r*r
+a
+a*a*a
+r*r*r
+r^2
+a^2
+r.^2
+a.^2
+r[1]
+a[1]
+r'
+a'
+conj(r)
+r
+a = b.SquareMatrix(r)
+a[1]
+a[1] = 0.5
+r
+a
+a'
+r'
+a = b.SquareMatrix(r)
+size(a)
+which(size, a)
