@@ -1,7 +1,3 @@
-importall Base
-import Base.LinAlg: DimensionMismatch
-
-
 # Restrict arrays to numbers
 typealias NumVector{T<:Number} Vector{T}
 typealias NumMatrix{T<:Number} Matrix{T}
@@ -51,4 +47,3 @@ for op in (:+, :-, :*, :/, :.*, :./)
         ($op)(A::SquareMatrix, B::SquareMatrix) = SquareMatrix(($op)(A.M, B.M))
     end
 end
-

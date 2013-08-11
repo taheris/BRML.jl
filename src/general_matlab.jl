@@ -1,7 +1,3 @@
-using PyCall
-
-include("helpers.jl")
-
 @pyimport numpy.random as npr
 @pyimport scipy.special as sps
 
@@ -40,6 +36,16 @@ end
 
 condp(pin::NumArray, i::Indices) = mxcall(:condp, 1, float(pin), i)
 
+# gaussCond: return the mean and covariance of a conditioned Gaussian
+gaussCond(obs::NumVector, meanAll::NumMatrix, sAll::SquareMatrix) =
+    mxcall(:GaussCond, 2, float(obs), float(meanAll), float(sAll.M))
+
+gaussCond(obs::NumVector, meanAll::NumMatrix, sAll::NumMatrix) =
+    gaussCond(obs, meanAll, SquareMatrix(sAll))
+    
 # plotCov: returns points for plotting an ellipse of a covariance
-plotCov(mean::NumVector, covariance::SymTridiagonal, length::Real) =
-    mxcall(:plotCov, 1, mean, covariance, length)
+plotCov(mean::NumMatrix, covariance::SquareMatrix, length::Real) =
+    mxcall(:plotCov, 1, float(mean), float(covariance.M), float(length))
+
+plotCov(mean::NumMatrix, covariance::NumMatrix, length::Real) =
+    plotCov(mean, SquareMatrix(covariance), length)

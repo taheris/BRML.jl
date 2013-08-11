@@ -1,6 +1,3 @@
-using MATLAB
-
-
 # connect to MATLAB engine and intialise BRML toolbox
 if MATLAB.default_msession == nothing
     get_default_msession()

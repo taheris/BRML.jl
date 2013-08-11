@@ -320,3 +320,118 @@ r'
 a = b.SquareMatrix(r)
 size(a)
 which(size, a)
+zeros(2,1)
+b.demoGibbsGauss()
+demoGibbsGauss()
+b.demoGibbsGauss()
+ in demoGibbsGauss at c:\Users\shaun\skydrive\code\julia\brml\src\demos.jl:11
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.plotCov
+a1 = a2 = zeros(2,1)
+a1
+a2
+b.gaussCond
+b.demoGibbsGauss()
+b.plotCov
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+?
+h
+$m
+$n m
+$nm
+$n
+l
+h
+p m
+l
+s
+s
+px
+p x
+p l
+x[2,2]
+q
+b.demoGibbsGauss()
+b.gaussCond
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+x
+p l
+x[2,1]
+p n
+p m
+p S
+s
+s
+b.gaussCond([NaN, 0.0], zeros(2,1), SquareMatrix(rand(2,2)))
+b.gaussCond([NaN, 0.0], zeros(2,1), b.SquareMatrix(rand(2,2)))
+obs
+meanAll
+sAll
+b.gaussCond(obs,meanAll,sAll)
+float(obs)
+float(meanAll)
+float(sAll)
+obs
+float(sAll.M)
+condp
+gaussCond
+gaussCond(obs,meanAll,[0])
+gaussCond(obs,meanAll,SquareMatrix([0]))
+gaussCond(obs,meanAll,SquareMatrix(rand(2,2)))
+meanAll
+gaussCond(obs,[0,0],sAll)
+gasussCond
+gaussCond
+obs
+gaussCond(obs,[0 0]',sAll)
+gaussCond
+b.gaussCond
+using BRML
+gaussCond
+b.gaussCond(obs,meanAll,sAll)
+obs
+b.gaussCond(obs,meanAll,sAll)
+b.gaussCond
+obs
+b.gaussCond(obs,meanAll,sAll)
+b.gaussCond(obs,meanAll,sAll)
+b
+BRML
+b.gaussCond
+b.gaussCond(obs,meanAll,sAll)
+gaussCond
+b.gaussCond(obs,meanAll,sAll)
+sAll
+sAll = b.SquareMatrix([0.9625 -0.0726; -0.0726 0.1809])
+b.gaussCond(obs,meanAll,sAll)
+b.gaussCond(obs,meanAll,sAll)
+gaussCond
+b.gaussCond(obs,meanAll,sAll)
+using BRML
+
+
+casp
+cap
+cap
+demoGibbsGauss()
+plotCov
+plotCov
+b
+using BRML
+plotCov
+BRML
+BRML = nothing
+BRML = nul
+nothing
+BRML = 1
+using BRML
+plotCov
+plotCov
+using BRMl
+using BRML
+plotCov

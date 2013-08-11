@@ -1,7 +1,3 @@
-using PyCall
-
-include("helpers.jl")
-
 @pyimport numpy.random as npr
 @pyimport scipy.special as sps
 
