@@ -74,10 +74,10 @@ function dirRand(alpha::NumVector, n::Number)
     return r ./ repmat(mapslices(sum,r,1), length(alpha), 1)
 end
 
-# multivarRandN: samples from a multi-variate Normal(Gaussian) distribution
-multivarRandN(mu::Real, sigma::Real, cases::Int=1) = multivarRandN([mu], sigma, cases)
+# multiVarRandN: samples from a multi-variate Normal(Gaussian) distribution
+multiVarRandN(mu::Real, sigma::Real, cases::Integer=1) = multiVarRandN([mu], sigma, cases)
 
-function multivarRandN(mu::NumVector, sigma::Real, cases::Int=1)
+function multiVarRandN(mu::NumVector, sigma::Real, cases::Integer=1)
     U,S,V = svd(sigma)
     r = randn(length(mu), cases)
     return U*diagm(sqrt(vec(diagm(S)))).*r + repmat(mu,1,cases)

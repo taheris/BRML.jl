@@ -1,427 +1,3 @@
-r = rand(2,3)
-b.SquareMatrix(r)
-b.SquareMatrix(r)
-r = rand(2,3)
-r = rand(2,2)
-a = b.SquareMatrix(r)
-typeof(a)
-typeof(r)
-help(b.SquareMatrix)
-size(r)
-size(a)
-b.size(a)
-size(a)
-b.size
-b.size
-b.size(a)
-b.size(a)
-b.size
-size(a.M)
-size
-methods(size)
-b.size
-b.size(a)
-a
-b.size(a)
-size(a)
-size(a)
-methods(size)
-repl_show(a)
-isa(Number, 1.2)
-isa(1.2, Number)
-help(Number)
-help(Float64)
-help(FloatingPoint)
-help(Real)
-size(a)
-methods(size)
-methods(size)
-methods(size)
-methods(size)
-r = rand(2,3)
-a = b.SquareMatrix(r)
-r = rand(2,2)
-a = b.SquareMatrix(r)
-size(a)
-methods(size)
-methods(size)
-size(a)
-show_repl(a)
-show(a)
-which(show, a)
-which(show, STDOUT, a)
-summart(a)
-summary(a)
-isempty(a)
-size(a)
-show(a)
-ndims(a)
-print_matrix(STDOUT, a)
-which(print_matrix, a)
-which(print_matrix)
-which(print_matrix, STDOUT, a)
-tty_rows()
-which(print_matrix, STDOUT, a, 25, 25)
-print_matrix_row(STDOUT, a, 10, 1:2, " ")
-isassigned(a,1,1)
-a[1,1]
-a[1]
-a
-a = b.SquareMatrix(r)
-full(a)
-a.M
-which(full, a)
-which(print_matrix)
-size
-print_matrix
-full
-a
-a
-a  = b.SquareMatrix(r)
-a
-a  = b.SquareMatrix(r)
-a
-a * 2
-a[1]
-length(a)
-getindex(a,1)
-a = b.SquareMatrix(rand(3,2))
-a = b.SquareMatrix(rand(3,3))
-a*2
-b = convert(NumMatrix,a)
-b
-a2 = convert(b.NumMatrix, a)
-a2
-a
-a .* 2
-a * 2
-a
-a2
-a * a2
-a + a2
-a
-a2
-a + a2
-promote(a,a2)
-c = promote(a,a2)
-c
-a
-a + a2
-full(a)
-a = b.SquareMatrix(r)
-full(a)
-a
-a2 = r
-a + a2
-isa(a2,NumMatrix)
-isa(a2,b.NumMatrix)
-isa(a2,Array)
-isa(a2,Array{Float64,2})
-a3 = convert(NumMatrix,a)
-a3=convert(b.NumMatrix,a)
-a
-a2
-a3
-a2 + a3
-a'
-r = rand(2,2)
-a = b.SquareMatrix(r)
-a + r
-promote(a,r)
-promote(1.5,2)
-+(promote(a,r))
-r + r
-typeof(r)
-+(r,r)
-+(a,r)
-r
-a
-r[1]
-r[1] = 0.5
-r
-a
--r
-r
-r*r
-r
-r /2
-r./2
-a
-a*r
-Matrix
-promote_type(Array,Matrix)
-promote_type(Matrix,b.SquareMatrix)
-help(Array)
-help(Array{Int32,2})
-help(Matrix)
-help(Type)
-help(AbstractArray)
-promote_type(Diagonal,Matrix)
-Diagonal(rand(2,2))
-x = Diagonal(rand(2,2))
-y = rand(2,2)
-promote(x,y)
-x+y
-x*y
-y*x
-r = rand(2,2)
-a = b.SquareMatrix(r)
-a+a
-copy(a)
-a
-full(a)
-x
-y
-a+y
-y+y
-full(a)+y
-promote(a,y)
-promote_type(b.SquareMatrix,Matrix)
-convert(Matrix{Float64},a)
-a2 = convert(Matrix{Float64},a)
-a
-a2
-a+a2
-a2
-a2+a2
-a'
-a2'
-promote(a,a2)
-a = b.SquareMatrix(r)
-a2
-promote(a,a2)
-a+a2
-+(promote(a,a2))
-+((1,2))
-help(promote_array_type)
-a = b.SquareMatrix(r)
-a'
-a2 = convert(Matrix,a)
-a
-a2[1] = 0.5
-a
-a2
-promote_type(a,a2)
-promote_type(b.SquareMatrix,Matrix)
-methods(.*)
-nnz(a)
-a = b.SquareMatrix(r)
-a*2
-a+2
-a
-promote_type(SquareMatrix,Int32)
-promote_type(b.SquareMatrix,Int32)
-a
-a.M
-x = Hermitian(r)
-x*2
-x + 2
-find(a, 0.5)
-find(a)
-help(similar)
-r
-r[0.5]
-r[1]
-r[1.0]
-a = b.SquareMatrix(r)
-a
-a[1]
-a[2]
-a*2
-a[1:2]
-r[1:2]
-r[:]
-a[:]
-a[1] = 0.5
-a = b.SquareMatrix(r)
-a*2
-a = b.SquareMatrix(r)
-a*2
-a+1
-a
-a/2
-a = b.SquareMatrix(r)
-a+1
-a = b.SquareMatrix(r)
-a+1
-a*r
-r
-r*r
-a*2
-a.*2
-r*2
-r.*2
-a = b.SquareMatrix(r)
-a*r
-a.*r
-r*r
-r.*r
-a = b.SquareMatrix(r)
-a*r
-r*r
-a+1
-r = rand(2,2)
-a = b.SquareMatrix(r)
-a*2
-a.*2
-r*2
-r.*2
-r*r
-a*a
-a
-promote(a,2)
-promote(a,r)
-a = b.SquareMatrix(r)
-a*a
-a*r
-a.*r
-r.*r
-a = b.SquareMatrix(r)
-a*r
-a.*r
-r*r
-r.*r
-a = b.SquareMatrix(r)
-a+1
-a = b.SquareMatrix(r)
-a+1
-a = b.SquareMatrix(r)
-a+1
-r+1
-r*2
-a*2
-a.*2
-r.*2
-r*r
-a*a
-a = b.SquareMatrix(r)
-a*a
-r*r
-a
-a*a*a
-r*r*r
-r^2
-a^2
-r.^2
-a.^2
-r[1]
-a[1]
-r'
-a'
-conj(r)
-r
-a = b.SquareMatrix(r)
-a[1]
-a[1] = 0.5
-r
-a
-a'
-r'
-a = b.SquareMatrix(r)
-size(a)
-which(size, a)
-zeros(2,1)
-b.demoGibbsGauss()
-demoGibbsGauss()
-b.demoGibbsGauss()
- in demoGibbsGauss at c:\Users\shaun\skydrive\code\julia\brml\src\demos.jl:11
-b.demoGibbsGauss()
-b.demoGibbsGauss()
-b.plotCov
-a1 = a2 = zeros(2,1)
-a1
-a2
-b.gaussCond
-b.demoGibbsGauss()
-b.plotCov
-b.demoGibbsGauss()
-b.demoGibbsGauss()
-b.demoGibbsGauss()
-b.demoGibbsGauss()
-?
-h
-$m
-$n m
-$nm
-$n
-l
-h
-p m
-l
-s
-s
-px
-p x
-p l
-x[2,2]
-q
-b.demoGibbsGauss()
-b.gaussCond
-b.demoGibbsGauss()
-b.demoGibbsGauss()
-x
-p l
-x[2,1]
-p n
-p m
-p S
-s
-s
-b.gaussCond([NaN, 0.0], zeros(2,1), SquareMatrix(rand(2,2)))
-b.gaussCond([NaN, 0.0], zeros(2,1), b.SquareMatrix(rand(2,2)))
-obs
-meanAll
-sAll
-b.gaussCond(obs,meanAll,sAll)
-float(obs)
-float(meanAll)
-float(sAll)
-obs
-float(sAll.M)
-condp
-gaussCond
-gaussCond(obs,meanAll,[0])
-gaussCond(obs,meanAll,SquareMatrix([0]))
-gaussCond(obs,meanAll,SquareMatrix(rand(2,2)))
-meanAll
-gaussCond(obs,[0,0],sAll)
-gasussCond
-gaussCond
-obs
-gaussCond(obs,[0 0]',sAll)
-gaussCond
-b.gaussCond
-using BRML
-gaussCond
-b.gaussCond(obs,meanAll,sAll)
-obs
-b.gaussCond(obs,meanAll,sAll)
-b.gaussCond
-obs
-b.gaussCond(obs,meanAll,sAll)
-b.gaussCond(obs,meanAll,sAll)
-b
-BRML
-b.gaussCond
-b.gaussCond(obs,meanAll,sAll)
-gaussCond
-b.gaussCond(obs,meanAll,sAll)
-sAll
-sAll = b.SquareMatrix([0.9625 -0.0726; -0.0726 0.1809])
-b.gaussCond(obs,meanAll,sAll)
-b.gaussCond(obs,meanAll,sAll)
-gaussCond
-b.gaussCond(obs,meanAll,sAll)
-using BRML
-
-
-casp
-cap
-cap
-demoGibbsGauss()
-plotCov
-plotCov
-b
 using BRML
 plotCov
 BRML
@@ -435,3 +11,490 @@ plotCov
 using BRMl
 using BRML
 plotCov
+demoGibbsGauss()
+b.demoGibbsGauss()
+x = y = []
+x.push
+x.push!
+x.append
+x.append!
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.multiVarRandN
+b.multivarRandN
+b.multivarRandN
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+p
+p
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+b.demoGibbsGauss()
+array
+Array
+Symbol
+typeof(ans)
+help(Symbol)
+b.PotArray
+b.PotArray([1,2])
+x = b.PotArray([1,2])
+x.variables
+x.table
+x.table = rand(2,2)
+x = b.PotArray([1,2])
+x = b.PotArray([:a,:b])
+[:a,:b]
+typeof(ans)
+x = rand(2,3,4)
+size(x)
+length(size(x))
+y = [1:3]
+size(x)
+size(y)
+length(y)
+length(ans)
+ndims
+ndims(x)
+ndims(y)
+b.PotArray
+b.PotArray([1,2],rand(2,2))
+b.PotArray([:a,:b], rand(2,2))
+methods(b.PotArray)
+methods(b.PotArray)
+b.PotArray([:a,:b], rand(2,2))
+b.PotArray{2}([:a,:b], rand(2,2))
+b.PotArray{2}([:a,:b], rand(2,2))
+b.PotArray([:a,:b], rand(2,2))
+methods(b.PotArray)
+methods(b.PotArray)
+b.PotArray([:a,:b], rand(2,2))
+Float
+help(Real)
+help(FloatingPoint)
+b.PotArray([:a,:b], rand(2,2))
+methods(b.PotArray)
+isa(Array{Real}, rand(2,2))
+isa(Array, rand(2,2))
+isa(rand(2,2),Array)
+isa(rand(2,2),Array{Real})
+isa(rand(2,2),Array{Real,2})
+typeof(rand(2,2))
+b.PotArray([:a,:b], rand(2,2))
+isa(rand(2,2), Array{Float64})
+b.PotArray([:a,:b], rand(2,2))
+b.PotArray([:a], rand(2,2))
+x = b.PotArray([:a,:b], rand(2,2))
+x.variables
+x.table
+x = b.PotArray([:a,:b], rand(2,2))
+Dict
+Dict()
+Dict{Symbol,Vector{String}}()
+d = Dict{Symbol,Vector{String}}()
+d
+d[:a]
+x = b.PotArray([:a,:b], rand(2,2))
+x = b.PotArray([:a,:b], rand(2,2))
+x = b.PotArray([:a,:b], rand(2,3))
+x = b.PotArray([:a,:b], rand(2,2,2))
+x = b.PotArray([:a,:b], rand(2,2,2))
+x = b.PotArray([:a,:b], rand(2,2))
+x = b.PotArray([:a,:b], rand(2,2))
+x = b.PotArray([:a,:b], rand(2,2))
+x = b.PotArray([:a,:b], rand(2,2,2))
+x = b.PotArray([:a,:b], rand(2,2,2))
+x = b.PotArray([:a,:b], rand(2,2))
+x{1} = 1
+cell
+cell(2)
+x = b.PotArray([:a,:b], rand(2,2))
+d=Dict{Symbol,Integer}
+d[:a}
+d{:a}
+d[:a]
+d
+methods(d)
+d()
+d(1)
+d(:1)
+d[:a]
+d{:a}
+d[:a}
+d[:a]
+d[:a] = 1
+d.add
+ref
+help(ref)
+ref
+d[:a] = 2
+d
+insert
+dims
+x = b.PotArray([:a,:b], rand(2,2))
+x=[:a,:b]
+x[1]
+[x[i] => i for i=1:length(x)]
+x = b.PotArray([:a,:b], rand(2,2))
+x = b.PotArray([:a,:b], rand(2,2))
+x.table
+x.table[1]
+x.table[:]
+slicedim
+slicedim(x.table,2)
+slicedim(x.table,2,:)
+slicedim(x.table,2,1)
+slicedim(x.table,1,1)
+x.table
+slicedim(x.table,1,2)
+x
+slidedim(x.table,1,1)
+slicedim(x.table,1,1)
+slicedim(x.table,1,1) = [0.1 0.2]
+slicedim(x.table,1,1) = [0.1,0.2]
+[:knife=>["used","not used"],:maid=>["murderer","not murderer"],:butler=>["murderer","not murderer"]]
+typeof(ans)
+events = [:knife=>["used","not used"],:maid=>["murderer","not murderer"],:butler=>["murderer","not murderer"]]
+keys(events)
+[key for key in keys(events)]
+[keys(events)]
+keys(events)
+collect(ans)
+collect(keys(events))
+events(:butler)
+events[:butler]
+zeros(2,2,2)
+events
+domain = events
+variables = collect(keys(domain))
+[variables[i]=>i for i=1:length(variables)]
+[domain[key] for key in domain]
+[domain[key] for key in keys(domain)]
+[length(domain[key]) for key in keys(domain)]
+tuple([length(domain[key]) for key in keys(domain)])
+help(tuple)
+tuple([1,2,3])
+tuple([1,2,3]...)
+[1,2,3]...
+tuple([length(domain[key]) for key in keys(domain)]...)
+tuple([length(domain[key]) for key in keys(domain)]...)
+dims = tuple([length(domain[key]) for key in keys(domain)]...)
+variables
+zeros(dims)
+dims = tuple([length(domain[key]) for key in keys(domain)]...) end
+dims = tuple([length(domain[key]) for key in keys(domain)]...)
+domain
+domain.get(:butler)
+get(domain,:butler)
+get(domain,:butler,1)
+values(domain)
+collect(values(domain))
+length(ans)
+[length(d) for d in collect(values(domain))]
+help(collect)
+variables
+tuple
+help(tuple)
+tuple(3)
+tuple(variables)
+tuple(variables...)
+typeof(ans)
+domain = [:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]]
+variables = collect(keys(domain))
+domain[:maid]
+length(ans)
+dims = ()
+push!(dims,2)
+dims = []
+push!(dims,2)
+dims = Int[]
+push!(dims,2)
+dims
+push!(dims,2)
+tuple(dims)
+tuple(dims...)
+domain
+domain[:maid]
+findin(domain[:maid],:murderer)
+getindex(domain[:maid],:murderer)
+find(x->:murderer,domain[:maid])
+find((x)->:murderer,domain[:maid])
+(x)->:murderer
+x->x==:murderer
+find(x->x==:murderer,domain[:maid])
+[length(domain[key]) for key in variables]
+p = PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p.variables
+p.table
+p.domain
+find(x->x==:murderer,domain[:maid])
+getindex
+domain[:maid]
+get(domain,:maid,0)
+get
+methods(get)
+getindex(domain,:maid)
+domain.vals
+getindex(domain,:maid)
+find(x->x==:murderer,domain[:maid])
+find(x==:murderer,domain[:maid])
+pot
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+getindex(p,:maid,:murderer)
+p
+p.domain
+keys(p.domain)
+collect(keys(p.domain))
+collect(keys(p.domain))
+variableDim = Dict{Symbol,Integer}
+push!(variableDim, :a=>1)
+push!(variableDim, {:a=>1})
+push!(variableDim, [:a=>1])
+variableDim = Dict{Symbol,Int}
+push!(variableDim, [:a=>1])
+setindex!(variableDim, :a, 1)
+typeof(variableDim)
+variableDim = Dict{Symbol,Int}()
+typeof(variableDim)
+setindex!(variableDim, :a, 1)
+setindex!(variabldeDim,1,:a)
+setindex!(variableDim,1,:a)
+variableDim[:a]
+variableDim = Dict{Symbol,Integer}()
+setindex!(variableDim,1,:a)
+domain
+domain[:maid]
+domain[:maid][1]
+Potential
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]]
+Potential
+abstract Potential
+Potential
+typeof(ans)
+te
+Potential
+abstract Potential
+a
+b
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]]
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]]p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]]
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]]
+p
+1+1
+p
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p.keyDim
+p.keyDomain
+x = []
+push!(x,1)
+x = Integer[]
+push!(x,1)
+push!(x,2)
+push!(x,3)
+x
+x...
+[x...]
+tuple(x)
+tuple(x...)
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p.variables
+p.table
+p.domain
+p.keyDomain
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p.variables
+p.dimensions
+p.domains
+p
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+d=[:a=>1]
+typeof(d)
+d[:b] = 2
+d
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p[1]
+p = PotArray([:butler=>[:murderer,:notmurderer]])
+p = b.PotArray([:butler=>[:murderer,:notmurderer]])
+[1,2,3]
+[1,2,3]...
+tuple([1,2,3]...)
+tuple(1,2,3)
+1,2,3
+zeros([1,2,3]...)
+zeros(tuple([1,2,3]...))
+p = b.PotArray([:butler=>[:murderer,:notmurderer]])
+x = Int[]
+x.push!(2)
+push!(x,2)
+Array
+methods(Array)
+Array(Int,3)
+p = b.PotArray([:butler=>[:murderer,:notmurderer]])
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p = b.PotArray([:butler=>[:murderer,:notmurderer]])
+p = b.PotArray([:butler=>[:murderer,:notmurderer]])
+p = b.PotArray([:butler=>[:murderer,:notmurderer]])
+help(similar)
+ p.domains
+dom = p.domains[:butler]
+dom[1]
+dom = p.domain[variables[:butler]]
+dom = p.domains[variables[:butler]]
+dom = p.domains[p.variables[:butler]]
+x
+push!(x,3)
+get(x,1)
+get(x)
+getindex(x,1)
+getindex(x,2)
+p = b.PotArray([:butler=>[:murderer,:notmurderer]])
+size(p.table)
+ndims(p.table)
+p.variables
+help(endof)
+endof(p.table)
+p.table
+help(eltype)
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+collect(keys([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]]))
+[key for key in [:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]]]
+[item.key for item in [:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]]]
+:knife=>[:used,:notused]
+[:knife=>[:used,:notused]]
+typeof(ans)
+x = [:knife=>[:used,:notused]]
+x
+key(x)
+getkey(x)
+x[1]
+typeof(x)
+x = [:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]]
+x
+length(x)
+x[1]
+[:maid,:knife=>:used]
+[:maid,[:knife=>:used]]
+hash(:knife)
+hash(:maid)
+hash(:butler)
+hash(:butler)
+x(dims::Integer...) = length(dims)
+temp(dims::Integer...) = length(dims)
+temp(1)
+temp(1,2,3)
+temp(i, dims::Integer...) = dims[i]
+temp(2, 1,2,3)
+temp(dims::Integer...) = dims[1]
+temp(1,2,3)
+temp(dims::Integer...) = dims[3]
+temp(1,2,4)
+Symbol(1)
+Symbol
+help(Symbol)
+methods(Symbol)
+constructors(Symbol)
+Symbol
+where(Symbol)
+where
+isa(Vector,1)
+isa(1,Vector)
+isa([1],Vector)
+d
+keys(d)
+keys(d)...
+[keys(d)]
+[keys(d)...]
+x = [:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]]
+x
+[keys(x)...]
+d
+ :a
+:a[1]
+p
+t = p.table
+t[:]
+t = resize(1:8, 2,2,2)
+sizehint
+reshape
+reshape(1:8, 2,2,2)
+t = reshape(1:8, 2,2,2)
+t[:,:,1]
+t[:,2,1]
+p
+t
+t[2,:,:]
+help(Array)
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p
+p[[:maid=>:murderer]]
+select
+p[[:maid=>:murderer]]
+p[[:maid=>:murderer]]
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p[[:maid=>:murderer]]
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p[[:maid=>:murderer]]
+String(1)
+string(1)
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p[[:maid=>:murderer]]
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p[[:maid=>:murderer]]
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p[[:maid=>:murderer]]
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p[[:maid=>:murderer]]
+p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
+p[[:maid=>:murderer]]
+p[ans]
+p[[:maid=>:murderer]]
+p.table[":",":","1"]
+t
+t[":",":",1]
+t
+t[:,:,1]
+:

@@ -3,8 +3,8 @@ typealias NumVector{T<:Number} Vector{T}
 typealias NumMatrix{T<:Number} Matrix{T}
 typealias NumArray{T<:Number,N} Array{T,N}
 
-# Indices are a vector of ints or a single int
-typealias Indices{T<:Int} Union(Int, Vector{T})
+# Indices are a vector of integers or a single integer
+typealias Indices{T<:Integer} Union(Integer, Vector{T})
 
 # SquareMatrix: number of rows equal the number of columns
 type SquareMatrix{T<:Number} <: AbstractMatrix{T}
