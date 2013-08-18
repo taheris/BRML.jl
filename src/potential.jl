@@ -5,30 +5,30 @@ type PotArray <: Potential
     # variables: list of keys for each potential
     variables::Vector{Symbol}
     # table: probability of each state, initialised to 0
-    table::Array{Real}
+    table::Array
     # dimensions: maps a potential key to a dimension index
     dimensions::Dict{Symbol,Int}
     # domains: maps a potential key to a map from domain key to item index
     domains::Dict{Symbol,Dict{Symbol,Int}}
+end
 
-    # PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
-    function PotArray(domain::Dict{Symbol,Vector{Symbol}})
-        variables = collect(keys(domain))
-        dimensions = Dict{Symbol,Int}()
-        domains = Dict{Symbol,Dict{Symbol,Int}}()
-        tableDims = Array(Int, length(variables))
-        
-        for i=1:length(variables)
-            key = variables[i]
-            dom = domain[key]
-            dimensions[key] = i
-            domains[key] = [getindex(dom,j)=>j for j=1:length(dom)]
-            tableDims[i] = length(dom)
-        end
+# PotArray: constructor from a map of keys to a list of domain keys
+function PotArray(domain::Dict{Symbol,Vector{Symbol}})
+    variables = collect(keys(domain))
+    dimensions = Dict{Symbol,Int}()
+    domains = Dict{Symbol,Dict{Symbol,Int}}()
+    tableDims = Array(Int, length(variables))
 
-        table = zeros(tableDims...)
-        new(variables, table, dimensions, domains) 
+    for i=1:length(variables)
+        key = variables[i]
+        dom = domain[key]
+        dimensions[key] = i
+        domains[key] = [getindex(dom,j)=>j for j=1:length(dom)]
+        tableDims[i] = length(dom)
     end
+
+    table = zeros(tableDims...)
+    return PotArray(variables, table, dimensions, domains) 
 end
 
 # PotArray operations
@@ -64,4 +64,8 @@ function setindex!{T<:Real}(pot::PotArray, val::Union(T,Array{T}),
     # evaluate an expression object which sets subset equal to val
     eval(Expr(:(=), subset(pot, ind), :($val)))
     return val
+end
+
+function *(pots::PotArray...)
+    return
 end
