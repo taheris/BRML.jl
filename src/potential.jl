@@ -66,6 +66,34 @@ function setindex!{T<:Real}(pot::PotArray, val::Union(T,Array{T}),
     return val
 end
 
-function *(pots::PotArray...)
-    return
+function *(A::PotArray, B::PotArray)
+    variables = Symbol[]
+    dimensions = Dict{Symbol,Int}()
+    dimension = 1
+    domains = Dict{Symbol,Dict{Symbol,Int}}()
+    tableDims = Int[]
+    
+    for dom in (A.domains, B.domains)
+        for key in keys(dom)
+            if contains(variables, key)
+                error("Duplicate key: $(string(key))")
+            end
+            push!(variables, key)
+            dimensions[key] = dimension
+            dimension += 1
+            domains[key] = dom[key]
+            push!(tableDims, length(dom[key]))
+        end
+    end
+
+    table = zeros(tableDims...)
+    newpot = PotArray(variables, table, dimensions, domains)
+    
+    for keyA in keys(A.domains), keyB in keys(B.domains)
+        for domA in keys(A.domains[keyA]), domB in keys(B.domains[keyB])
+            newpot[[keyA=>domA, keyB=>domB]] = A[[keyA=>domA]] * B[[keyB=>domB]]
+        end
+    end
+
+    return newpot
 end
