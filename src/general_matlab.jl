@@ -9,18 +9,6 @@ bar3z(Z::NumArray) = mxcall(:bar3zcolor, 1, Z)
 chi2test{T<:Real}(k::NumArray{T}, significance::Real) =
     mxcall(:chi2test, 1, float(k), significance)
 
-# stateCount: return state counts for a data matrix where each column is a datapoint
-function stateCount(data::NumMatrix, states::NumArray)
-    data = float(data)
-    states = float(states)
-    
-    @mput data states
-    eval_string("[cidx states] = count(data, states);")
-    @mget cidx states;
-    
-    return cidx, states
-end
-
 # condp: make a conditional distribution from an array
 function condp(pin::NumVector)
     m = max(pin) 
@@ -36,6 +24,16 @@ end
 
 condp(pin::NumArray, i::Indices) = mxcall(:condp, 1, float(pin), i)
 
+# drawNet: plot a network
+function drawNet(Adj::SquareMatrix)
+    adj = Adj.M
+    @matlab cla
+    @mput adj 
+    return mxcall(:draw_layout, 3, adj)
+end
+
+drawNet(Adj::NumMatrix) = drawNet(SquareMatrix(Adj))
+
 # gaussCond: return the mean and covariance of a conditioned Gaussian
 gaussCond(obs::NumVector, meanAll::NumMatrix, sAll::SquareMatrix) =
     mxcall(:GaussCond, 2, float(obs), float(meanAll), float(sAll.M))
@@ -49,3 +47,15 @@ plotCov(mean::NumMatrix, covariance::SquareMatrix, length::Real) =
 
 plotCov(mean::NumMatrix, covariance::NumMatrix, length::Real) =
     plotCov(mean, SquareMatrix(covariance), length)
+
+# stateCount: return state counts for a data matrix where each column is a datapoint
+function stateCount(data::NumMatrix, states::NumArray)
+    data = float(data)
+    states = float(states)
+    
+    @mput data states
+    eval_string("[cidx states] = count(data, states);")
+    @mget cidx states;
+    
+    return cidx, states
+end

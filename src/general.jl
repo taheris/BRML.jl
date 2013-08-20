@@ -83,5 +83,11 @@ function multiVarRandN(mu::NumVector, sigma::Real, cases::Integer=1)
     return U*diagm(sqrt(vec(diagm(S)))).*r + repmat(mu,1,cases)
 end
 
+# normP: make a normalised distribution from an array
+function normP(A::NumArray)
+    B = A + eps()
+    return B ./ sum(B)
+end
+
 # sigma: returns 1 ./ (1+exp(-x))
 sigma(x::NumArray) = 1 ./ (1+exp(-x))

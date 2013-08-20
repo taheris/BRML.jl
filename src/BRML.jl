@@ -20,10 +20,10 @@ export
 
     # general.jl
     argmin, argmax, logsumexp, betaXGreaterBetaY, avgSigmaGauss, cap,
-    condexp, dirRand, multiVarRandN, sigma,
+    condexp, dirRand, multiVarRandN, normP, sigma,
 
     # general_matlab.jl
-    bar3z, chi2test, condp, gaussCond, plotCov, stateCount,
+    bar3z, chi2test, condp, drawNet, gaussCond, plotCov, stateCount,
     
     # demos.jl
     demoGibbsGauss

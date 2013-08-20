@@ -52,6 +52,12 @@ facts("Testing General Functions") do
         end
     end
 
+    context("normP") do
+        @fact b.normP(vector) => [1/6, 1/2, 1/3]
+        @fact b.normP(matrix) => roughly([0.0923 0.0154 0.338; 0.315 0.0385 0.2],
+                                         atol=0.01)
+    end
+
     context("sigma") do
         @fact b.sigma(vector) => roughly([0.999, 1, 1], atol=0.01)
         @fact b.sigma(matrix) => roughly([0.999 0.88 1; 1 0.993 1], atol=0.01)
