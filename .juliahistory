@@ -1,72 +1,3 @@
-events(:butler)
-events[:butler]
-zeros(2,2,2)
-events
-domain = events
-variables = collect(keys(domain))
-[variables[i]=>i for i=1:length(variables)]
-[domain[key] for key in domain]
-[domain[key] for key in keys(domain)]
-[length(domain[key]) for key in keys(domain)]
-tuple([length(domain[key]) for key in keys(domain)])
-help(tuple)
-tuple([1,2,3])
-tuple([1,2,3]...)
-[1,2,3]...
-tuple([length(domain[key]) for key in keys(domain)]...)
-tuple([length(domain[key]) for key in keys(domain)]...)
-dims = tuple([length(domain[key]) for key in keys(domain)]...)
-variables
-zeros(dims)
-dims = tuple([length(domain[key]) for key in keys(domain)]...) end
-dims = tuple([length(domain[key]) for key in keys(domain)]...)
-domain
-domain.get(:butler)
-get(domain,:butler)
-get(domain,:butler,1)
-values(domain)
-collect(values(domain))
-length(ans)
-[length(d) for d in collect(values(domain))]
-help(collect)
-variables
-tuple
-help(tuple)
-tuple(3)
-tuple(variables)
-tuple(variables...)
-typeof(ans)
-domain = [:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]]
-variables = collect(keys(domain))
-domain[:maid]
-length(ans)
-dims = ()
-push!(dims,2)
-dims = []
-push!(dims,2)
-dims = Int[]
-push!(dims,2)
-dims
-push!(dims,2)
-tuple(dims)
-tuple(dims...)
-domain
-domain[:maid]
-findin(domain[:maid],:murderer)
-getindex(domain[:maid],:murderer)
-find(x->:murderer,domain[:maid])
-find((x)->:murderer,domain[:maid])
-(x)->:murderer
-x->x==:murderer
-find(x->x==:murderer,domain[:maid])
-[length(domain[key]) for key in variables]
-p = PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
-p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
-p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
-p = b.PotArray([:knife=>[:used,:notused],:maid=>[:murderer,:notmurderer],:butler=>[:murderer,:notmurderer]])
-p.variables
-p.table
-p.domain
 find(x->x==:murderer,domain[:maid])
 getindex
 domain[:maid]
@@ -498,3 +429,72 @@ pot[[:maid=>:murderer,:knife=>used]]
 pot[[:maid=>:murderer,:knife=>:used]]
 pot[[:maid=>:murderer]]
 1
+Graphs
+add_edge!
+Graphs.add_edge!
+using Graphs
+add_edge!
+add_edge!
+Graphs.add_edge!
+add_edge!
+Edge
+Graphs.Edge
+using Graphs
+Graphs.Edge
+Edge
+add_edge!
+Edge
+add_edge!)
+add_edge!
+union
+union([1,2],[2])
+setdiff
+setdiff([1,2],[2])
+setdiff([1,2],[1,2])
+isempty(ans)
+g
+g
+parents(2,g)
+b.parents(2,g)
+b.parents([2],g)
+g
+g
+b.parents([2],g)
+contains
+contains([1,2],2)
+b.parents([2],g)
+b.parents([2,3],g)
+b.parents([2,3],g)
+b.ancestors([4],g)
+b.ancestors([2],g)
+b.ancestors([3],g)
+b.ancestors([1],g)
+b.ancestors([1,2],g)
+b.parents([1,2],g)
+b.children(1,g)
+for v in vertices(g) println(v) end
+b.children(1,g
+)
+g
+b.children(1,g)
+b.children(1,g)
+b.children(1,g)
+b.children(1,g)
+b.children(1,g)
+b.ancestors(3,g)
+b.ancestors(3,g)
+b.ancestors(3,g)
+b.ancestors(3,g)
+s
+typeof(vs)
+typeof(G)
+typeof([])
+s
+find_ancestors
+b.find_ancestors
+b.ancestors(3,g)
+b.ancestors(3,g)
+find_ancestors
+b.ancestors(3,g)
+find_ancestors
+b.ancestors(3,g)

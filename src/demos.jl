@@ -1,7 +1,3 @@
-# demoClouseau: inspector clouseau example
-function demoClouseau()
-end
-
 # demoGibbsGauss: demo of Gibbs sampling of a bivariate Gaussian
 function demoGibbsGauss()
     A = randn(2,2)
