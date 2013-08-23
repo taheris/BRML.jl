@@ -17,7 +17,7 @@ facts("Testing Graphs") do
         adjM = falses(4,4)
         adjM[1,2] = adjM[1,3] = adjM[2,3] = adjM[2,4] = adjM[3,4] = true
 
-        @fact Graphs.adjacency_matrix_by_adjlist(g) => adjM
+        @fact Graphs.adjacency_matrix_by_adjlist(dg) => adjM
     end
 
     context("Parents") do

@@ -38,6 +38,7 @@ end
 
 # cap: limits each x item to an absolute value c
 cap(x::Number, c::Number) = abs(x) > c ? c*sign(x) : x
+
 cap(x::NumArray, c::Number) = begin
     out = copy(x)
     indices = find(abs(out) .> c)

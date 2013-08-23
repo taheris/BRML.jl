@@ -85,15 +85,13 @@ for graph_type in (:DirectedGraph, :UndirectedGraph)
 end
 
 # push_edge!: auxiliary function for add_edge!
-function push_edge!{V,E}(g::DirectedGraph, edge::E, u::V, v::V,
-                          ui::Int, vi::Int)
+function push_edge!{V,E}(g::DirectedGraph, edge::E, u::V, v::V, ui::Int, vi::Int)
     push!(g.edges, edge)
     push!(g.adjlist[ui], v)
     push!(g.inclist[ui], edge)
 end
 
-function push_edge!{V,E}(g::UndirectedGraph, edge::E, u::V, v::V,
-                          ui::Int, vi::Int)
+function push_edge!{V,E}(g::UndirectedGraph, edge::E, u::V, v::V, ui::Int, vi::Int)
     push!(g.edges, edge)
     push!(g.adjlist[ui], v)
     push!(g.inclist[ui], edge)
