@@ -6,3 +6,13 @@ indval(ind::Function, val::Function, A::NumMatrix) =
 
 # isvector: one matrix dimension is of size 1
 isvector(A::AbstractMatrix) = size(A, 1) == 1 || size(A, 2) == 1
+
+# vectorIndex: return the index position of a specific vector value
+function vectorIndex{T}(vector::Vector{T}, val::T)
+    for i = 1:length(vector)
+        if vector[i] == val
+            return i
+        end
+    end
+    error("Value $(val) not found")
+end

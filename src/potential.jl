@@ -40,7 +40,7 @@ end
 # Constructor without defined domains, which will default to sequential ints
 function PotArray{VT}(variables::Vector{VT}, table::Array{Float64})
     dims = size(table)
-    domain::Dict{VT,Vector{Int}}()
+    domain = Dict{VT,Vector{Int}}()
 
     for i = 1:length(variables)
         var = variables[i]
@@ -73,114 +73,161 @@ length(pot::PotArray) = length(pot.table)
 endof(pot::PotArray) = endof(pot.table)
 
 # PotArray type functions
-variableType{VT,DT}(pot::PotArray{VT,DT}) = VT
-domainType{VT,DT}(pot::PotArray{VT,DT}) = DT
+varType{VT,DT}(pot::PotArray{VT,DT}) = VT
+domType{VT,DT}(pot::PotArray{VT,DT}) = DT
 
-# domainIndex: return the index position of a domain value, or -1 if not found
-function domainIndex{DT}(domain::Vector{DT}, val::DT)
-    for i = 1:length(domain)
-        if domain[i] == val
-            return i
-        end
+# getindex: allows 'pot[val1,:,val3]' retrieval, returning a new pot with
+# variable var2 where var1 = val1 and var3 = val3 from the original pot.
+# If there are no missing indices, getindex returns the state probability value.
+function getindex{VT,DT}(pot::PotArray{VT,DT}, vals...)
+    indices = domainIndices(pot, vals...)
+
+    if any([index == 0 for index in indices])
+        return missingPot(pot, indices, vals...)
+    else
+        return pot.table[indices...]
     end
-    return -1
 end
 
-# getindex: allows 'pot[val1,:,val3]' retrieval, returning a new pot of
-# variable var2 where var1 = val1 and var3 = val3 from the original pot
-function getindex(pot::PotArray, vals...)
+# setindex!: allows 'pot[val1,val2]' = x' updating, setting the potential
+# table state where var1 = val1 and var2 = val2 to new probability x
+function setindex!{VT,DT}(pot::PotArray{VT,DT}, x::Float64, vals...)
+    indices = domainIndices(pot, vals...)
+
+    if any([index == 0 for index in indices])
+        error("Cannot set state probability with range values")
+    else
+        pot.table[indices...] = x
+    end
+end
+
+# domainIndices: return an array of index positions for each pot variable
+function domainIndices{VT,DT}(pot::PotArray{VT,DT}, vals...)
     vlen = length(pot.variables)
     if length(vals) != vlen
         error("Number of values must equal number of variables")
     end
 
-    vt = variableType(pot)
-    dt = domainType(pot)
-    variables = Array(vt, 0)
-    domain = Dict{vt,Vector{dt}}()
     indices = Array(Int, vlen)
-    
-    for i = 1:length(vals)
+    for i = 1:vlen
         val = vals[i]
-        var = pot.variables[i]
-        dom = pot.domain[var]
-        indices[i] = domainIndex(dom, val)
-        
-        if val == 1:length(dom) 
+        if isa(val, VT)
+            var = pot.variables[i]
+            dom = pot.domain[var]
+            indices[i] = vectorIndex(dom, val)
+        elseif isa(val, Range1)
+            indices[i] = 0
+        else
+            error("Not a valid variable domain: $(val)")
+        end 
+    end
+
+    return indices
+end
+
+# newPot: create a new potential containing the missing values in indices
+function missingPot{VT,DT}(pot::PotArray{VT,DT}, indices::Vector{Int}, vals...)
+    vlen = length(vals)
+    missingIndex = Int[]
+    variables = VT[]
+    domain = Dict{VT,Vector{DT}}()
+
+    for i = 1:vlen
+        if indices[i] == 0
+            var = pot.variables[i]
+            dom = pot.domain[var]
+            push!(missingIndex, i)
             push!(variables, var)
             domain[var] = dom
         end
     end
 
-    if !any([i == -1 for i in indices])
-        return pot.table[indices...]
+    mlen = length(missingIndex)
+    newPot = PotArray(variables, domain)
+    newDomains = [getindex(newPot.domain, var) for var in variables]
+
+    for newVals in Iterators.product(newDomains...)
+        for i = 1:mlen
+            ind = missingIndex[i]
+            val = newVals[i]
+            var = newPot.variables[i]
+            dom = newPot.domain[var]
+            indices[ind] = vectorIndex(dom, val)
+        end
+        newPot[newVals...] = pot.table[indices...]
     end
-        
-    newpot = PotArray(variables, domain)
     
-    return newpot
+    return newPot
 end
 
-getindex{VT,DT}(pot::PotArray, varVal::(VT,DT)) = getindex(pot, [varVal])
+# *: Multiply two potentials together, returning a new potential.
+# If A is a potential over variables 1 and 2, and B is a potential over
+# variables 1 and 3, the result will be a potential over variables 1, 2 and 3.
+function *{VT,DT}(A::PotArray{VT,DT}, B::PotArray{VT,DT})
+    variables = union(A.variables, B.variables)
+    vlen = length(variables)
+    domain = Dict{VT,Vector{DT}}()
 
-# PotArray table selection
-function subset{VT,DT}(pot::PotArray, varVal::Vector{(VT,DT)})
-    # default to selecting all for each dimension
-    items::Vector{Any} = [:(:) for i=1:ndims(pot)]
-
-    for i = 1:length(varVal)
-        var, val = varVal[i]
-        dim = pot.dimension[var]
-        item = pot.domain[var][val]
-
-        # fix dimension of var at item value
-        items[dim] = item
+    for i = 1:vlen
+        var = variables[i]
+        domain[var] = contains(A.variables, var) ? A.domain[var] : B.domain[var]
     end
 
-    # return an expression object with selected subset of pot.table
-    return Expr(:ref, pot.table, items...)
-end
-
-# setindex!: allows 'pot[[(var1, val1), (var2, val2)]]' = newVals' updating,
-# selecting where var1 = val1 and var2 = val2 and setting the result to newVal
-function setindex!{VT,DT}(pot::PotArray, newVal::Union(Float64,Array{Float64}),
-                          varVal::Vector{(VT,DT)})
-    # evaluate an expression object which sets subset equal to new_val
-    eval(Expr(:(=), subset(pot, varVal), :($newVal)))
-    return newVal
-end
-
-setindex!{VT,DT}(pot::PotArray, newVal::Union(Float64,Array{Float64}), varVal::(VT,DT)) =
-    setindex!(pot, newVal, [varVal])
-
-function *(A::PotArray, B::PotArray)
-    variables = Symbol[]
-    dimensions = Dict{Symbol,Int}()
-    dimension = 1
-    domains = Dict{Symbol,Dict{Symbol,Int}}()
-    tableDims = Int[]
+    pot = PotArray(variables, domain)
+    domains = [getindex(pot.domain, var) for var in variables]
     
-    for dom in (A.domains, B.domains)
-        for key in keys(dom)
-            if contains(variables, key)
-                error("Duplicate key: $(string(key))")
+    for vals in Iterators.product(domains...)
+        avals = Array(VT, length(A.variables))
+        bvals = Array(VT, length(B.variables))
+
+        for i = 1:vlen
+            var = variables[i]
+            val = vals[i]
+
+            if contains(A.variables, var)
+                ind = vectorIndex(A.variables, var)
+                avals[ind] = val
             end
-            push!(variables, key)
-            dimensions[key] = dimension
-            dimension += 1
-            domains[key] = dom[key]
-            push!(tableDims, length(dom[key]))
+            if contains(B.variables, var)
+                ind = vectorIndex(B.variables, var)
+                bvals[ind] = val
+            end
         end
-    end
 
-    table = zeros(tableDims...)
-    newpot = PotArray(variables, table, dimensions, domains)
+        pot[vals...] = A[avals...] * B[bvals...]
+    end
     
-    for keyA in keys(A.domains), keyB in keys(B.domains)
-        for domA in keys(A.domains[keyA]), domB in keys(B.domains[keyB])
-            newpot[[keyA=>domA, keyB=>domB]] = A[[keyA=>domA]] * B[[keyB=>domB]]
+    return pot
+end
+
+# sumpot: sum a potential over variables, returning a new potential over
+# the remaining variables
+function sumpot{VT,DT}(pot::PotArray{VT,DT}, variables::Vector{VT})
+    newVars = setdiff(pot.variables, variables)
+    newDom = [var => getindex(pot.domain, var) for var in newVars]
+    newPot = PotArray(newVars, newDom)
+
+    newDoms = [getindex(newPot.domain, var) for var in newVars]
+    oldDoms = [getindex(pot.domain, var) for var in variables]
+    allVars = [newVars..., variables...]
+    len = length(allVars)
+
+    for newVals in Iterators.product(newDoms...)
+        for oldVals in Iterators.product(oldDoms...)
+            allVals = [newVals..., oldVals...] 
+            vals = Array(VT, len)
+
+            for i = 1:len
+                var = allVars[i]
+                val = allVals[i]
+
+                ind = vectorIndex(pot.variables, var)
+                vals[ind] = val
+            end
+
+            newPot[newVals...] += pot[vals...]
         end
     end
-
-    return newpot
+    
+    return newPot
 end
