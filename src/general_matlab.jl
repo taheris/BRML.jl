@@ -9,6 +9,15 @@ bar3z(Z::NumArray) = mxcall(:bar3zcolor, 1, Z)
 chi2test{T<:Real}(k::NumArray{T}, significance::Real) =
     mxcall(:chi2test, 1, float(k), significance)
 
+# condexp: compute p proportional to exp(logp)
+condexp(logp::NumVector) = condp(exp(logp - repmat(logp, 1, 1)))
+
+function condexp(logp::NumMatrix)
+    pmax = mapslices(max, logp, 1)
+    P = size(logp, 1)
+    return condp(exp(logp - repmat(pmax, P, 1)))
+end
+
 # condp: make a conditional distribution from an array
 function condp(pin::NumVector)
     m = max(pin) 

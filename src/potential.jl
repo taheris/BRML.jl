@@ -144,7 +144,7 @@ function missingPot{VT,DT}(pot::PotArray{VT,DT}, indices::Vector{Int}, vals...)
 
     mlen = length(missingIndex)
     newPot = PotArray(variables, domain)
-    newDomains = [getindex(newPot.domain, var) for var in variables]
+    newDomains = [newPot.domain[var] for var in variables]
 
     for newVals in Iterators.product(newDomains...)
         for i = 1:mlen
@@ -174,7 +174,7 @@ function *{VT,DT}(A::PotArray{VT,DT}, B::PotArray{VT,DT})
     end
 
     pot = PotArray(variables, domain)
-    domains = [getindex(pot.domain, var) for var in variables]
+    domains = [pot.domain[var] for var in variables]
     
     for vals in Iterators.product(domains...)
         avals = Array(VT, length(A.variables))
@@ -204,11 +204,11 @@ end
 # the remaining variables
 function sumpot{VT,DT}(pot::PotArray{VT,DT}, variables::Vector{VT})
     newVars = setdiff(pot.variables, variables)
-    newDom = [var => getindex(pot.domain, var) for var in newVars]
+    newDom = [var => pot.domain[var] for var in newVars]
     newPot = PotArray(newVars, newDom)
 
-    newDoms = [getindex(newPot.domain, var) for var in newVars]
-    oldDoms = [getindex(pot.domain, var) for var in variables]
+    newDoms = [newPot.domain[var] for var in newVars]
+    oldDoms = [pot.domain[var] for var in variables]
     allVars = [newVars..., variables...]
     len = length(allVars)
 

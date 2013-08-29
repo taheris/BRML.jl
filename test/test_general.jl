@@ -39,11 +39,6 @@ facts("Testing General Functions") do
         @fact b.cap(-3, 2) => -2
         @fact b.cap([-5:5], 1) => [-1,-1,-1,-1,-1,0,1,1,1,1,1]
     end
-
-    context("condexp") do
-        @fact b.condexp(vector) => [1/3 1/3 1/3]'
-        @fact b.condexp(matrix) => roughly([0 0.047 1; 1 0.95 0], atol=0.01)
-    end
     
     context("dirRand") do
         x = b.dirRand([1:10], 5)

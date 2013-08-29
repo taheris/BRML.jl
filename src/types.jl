@@ -34,7 +34,7 @@ ctranspose(A::SquareMatrix) = SquareMatrix(ctranspose(A.M))
 
 for op in (:size, :getindex, :setindex!)
     @eval begin
-        ($op)(A::SquareMatrix, args...) = ($op)(A.M, args...)
+        ($op)(A::SquareMatrix, args::Real...) = ($op)(A.M, args...)
     end
 end
 

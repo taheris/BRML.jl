@@ -46,26 +46,6 @@ cap(x::NumArray, c::Number) = begin
     return out
 end
 
-#function chi2test{T<:Real}(k::NumMatrix{T}, significance::Real,
-#                           range::NumVector=[0:0.1:1000]')
-#    out = Array(eltype(k), (1,length(k)))
-#    for i = 1:length(k)
-#        y = condexp((k[i]/2 - 1) .* log(range+eps()) - range/2)
-#        indices = find(cumsum(y) .> 1 - significance)
-#        out[i] = range[indices[1]]
-#    end
-#    return out
-#end
-
-# condexp: compute p proportional to exp(logp)
-condexp(logp::NumVector) = condp(exp(logp - repmat(logp, 1, 1)))
-
-function condexp(logp::NumMatrix)
-    pmax = mapslices(max, logp, 1)
-    P = size(logp, 1)
-    return condp(exp(logp - repmat(pmax, P, 1)))
-end
-
 # dirRand: draw n samples from a Dirichlet distribution
 function dirRand(alpha::NumVector, n::Number)
     r = zeros(length(alpha), n)
