@@ -52,5 +52,3 @@ if use_matlab
 end
 
 end # module
-
-b = BRML
