@@ -1,12 +1,12 @@
 # define new graph types based on the Graphs.jl library
-for graph_type in (:directedgraph, :undirectedgraph)
+for graph_type in (:DirectedGraph, :UndirectedGraph)
     @eval begin
-        # define directedgraph and undirectedgraph types
-        type ($graph_type){v,e,vlist,elist,adjlist,inclist} <: abstractgraph{v,e}
-            vertices::vlist
-            edges::elist
-            adjlist::adjlist
-            inclist::inclist
+        # define DirectedGraph and UndirectedGraph types
+        type ($graph_type){V,E,VList,EList,AdjList,IncList} <: AbstractGraph{V,E}
+            vertices::VList
+            edges::EList
+            adjlist::AdjList
+            inclist::IncList
         end
 
         # define constructors
@@ -16,12 +16,12 @@ for graph_type in (:directedgraph, :undirectedgraph)
             adjlist = Vector{V}[]
             inclist = Vector{E}[]
             ($graph_type){V,E,Vector{V},Vector{E},Vector{Vector{V}},Vector{Vector{E}}}
-                (vertices, edges, adjlist, inclist)    
+                (vertices, edges, adjlist, inclist)
         end
 
         # define interface implementations
         @graph_implements ($graph_type) vertex_list edge_list vertex_map edge_map adjacency_list incidence_list
-        
+
         # implement interface functions
         num_vertices(g::($graph_type)) = length(g.vertices)
         vertices(g::($graph_type)) = g.vertices
@@ -57,7 +57,7 @@ for graph_type in (:directedgraph, :undirectedgraph)
             add_vertex!(g, ExVertex(length(g.vertices)+1, label))
 
         function add_edge!{V,E}(g::($graph_type){V,E}, edge::E)
-            nv = num_vertices(g) 
+            nv = num_vertices(g)
 
             u = source(edge)
             v = target(edge)
@@ -95,7 +95,7 @@ function push_edge!{V,E}(g::UndirectedGraph, edge::E, u::V, v::V, ui::Int, vi::I
     push!(g.edges, edge)
     push!(g.adjlist[ui], v)
     push!(g.inclist[ui], edge)
-    push!(g.adjlist[vi], u)   
+    push!(g.adjlist[vi], u)
     push!(g.inclist[vi], revedge(edge))
 end
 
@@ -121,7 +121,7 @@ for graph_type in (:DirectedIntGraph, :UndirectedIntGraph)
 
             ($graph_type)(vertices, edges, adjlist, inclist)
         end
-    end 
+    end
 end
 
 # is_directed: boolean used to complete AbstractGraph implementation
@@ -137,7 +137,7 @@ function parents{V,E}(g::DirectedGraph{V,E}, vs::Array{V})
             push!(parents, source(edge))
         end
     end
-    
+
     return sort(unique(parents))
 end
 
@@ -152,7 +152,7 @@ ancestors{V,E}(g::DirectedGraph{V,E}, vertex::V) = ancestors(g, [vertex])
 # find_ancestors: recursively find parents until there are no new vertices
 function find_ancestors{V,E}(g::DirectedGraph{V,E}, vs::Array{V}, found::Array{V})
     ancestors = parents(g, vs)
-    
+
     if isempty(setdiff(ancestors, found))
         return unique(found)
     else
@@ -169,7 +169,7 @@ function children{V,E}(g::DirectedGraph{V,E}, vs::Array{V})
             push!(children, target(edge))
         end
     end
-    
+
     return sort(unique(children))
 end
 
