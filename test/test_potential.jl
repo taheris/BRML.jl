@@ -1,9 +1,9 @@
 using FactCheck
-#using BRML # remove b.
+using BRML
 
 
 facts("Testing Potential Types") do
-    knife = b.PotArray(["knife", "butler", "maid"],
+    knife = PotArray(["knife", "butler", "maid"],
                        ["knife" => ["used", "not used"],
                         "butler" => ["murderer", "not murderer"],
                         "maid" => ["murderer", "not murderer"]])
@@ -22,11 +22,11 @@ facts("Testing Potential Types") do
     knife["not used", "murderer", "murderer"] =
         1 - knife["used", "murderer", "murderer"]
 
-    butler = b.PotArray(["butler"], ["butler"=>["murderer","not murderer"]])
+    butler = PotArray(["butler"], ["butler"=>["murderer","not murderer"]])
     butler["murderer"] = 0.6
     butler["not murderer"] = 0.4
 
-    maid = b.PotArray(["maid"], ["maid"=>["murderer", "not murderer"]])
+    maid = PotArray(["maid"], ["maid"=>["murderer", "not murderer"]])
     maid["murderer"] = 0.2
     maid["not murderer"] = 0.8
 
@@ -40,7 +40,7 @@ facts("Testing Potential Types") do
         jointPot = knife * butler * maid
         @fact jointPot["used", "murderer", "murderer"] => 0.012
 
-        sumKnife = b.sumpot(knife, ["butler","maid"])
+        sumKnife = sumpot(knife, ["butler","maid"])
         @fact sumKnife["used"] => 1.2
     end
 end
