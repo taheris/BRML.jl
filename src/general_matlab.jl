@@ -1,7 +1,3 @@
-@pyimport numpy.random as npr
-@pyimport scipy.special as sps
-
-
 # bar3z: plot a 3D bar plot of the matrix Z
 bar3z(Z::NumArray) = mxcall(:bar3zcolor, 1, Z)
 

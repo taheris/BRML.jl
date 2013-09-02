@@ -13,7 +13,6 @@ facts("Testing Potential Types") do
     knife["used", "murderer", "not murderer"] = 0.6
     knife["used", "murderer", "murderer"] = 0.1
 
-    # TODO: syntax that allows: knife["not used",:,:] = 1 - knife["used",:,:]
     knife["not used", "not murderer", "not murderer"] =
         1 - knife["used", "not murderer", "not murderer"]
     knife["not used", "not murderer", "murderer"] =

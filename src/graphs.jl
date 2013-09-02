@@ -1,12 +1,12 @@
 # define new graph types based on the Graphs.jl library
-for graph_type in (:DirectedGraph, :UndirectedGraph)
+for graph_type in (:directedgraph, :undirectedgraph)
     @eval begin
-        # define DirectedGraph and UndirectedGraph types
-        type ($graph_type){V,E,VList,EList,AdjList,IncList} <: AbstractGraph{V,E}
-            vertices::VList
-            edges::EList
-            adjlist::AdjList
-            inclist::IncList
+        # define directedgraph and undirectedgraph types
+        type ($graph_type){v,e,vlist,elist,adjlist,inclist} <: abstractgraph{v,e}
+            vertices::vlist
+            edges::elist
+            adjlist::adjlist
+            inclist::inclist
         end
 
         # define constructors

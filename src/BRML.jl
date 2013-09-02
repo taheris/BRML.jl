@@ -20,7 +20,7 @@ export
     Potential, PotArray, varType, domType, sumpot,
 
     # helpers.jl
-    indval, isvector,
+    indval, isvector, vectorIndex,
 
     # graphs.jl
     DirectedGraph, UndirectedGraph, DirectedIntGraph, UndirectedIntGraph,

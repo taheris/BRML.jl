@@ -6,35 +6,41 @@ type PotArray{VT,DT} <: Potential
     variables::Vector{VT}
     # dimension: maps an identifier to a table dimension index
     dimension::Dict{VT,Int}
-    # domain: maps a variable identifer to a list of domain values
+    # domain: maps an identifer to a list of domain values
     domain::Dict{VT,Vector{DT}}
     # table: probability of each state
     table::Array{Float64}
+
+    # Constructor from an ordered list of variables, with a probability table
+    # where the dimension order matches the variable order, and a map from each
+    # variable to a list of domain values of size equal to the table dimension
+    function PotArray{VT,DT}(variables::Vector{VT}, table::Array{Float64},
+                             domain::Dict{VT,Vector{DT}})
+        vlen = length(variables)
+        dims = size(table)
+        dlen = length(keys(domain))
+        if vlen != dlen
+            error("The number of domain keys must equal the number of variables")
+        end
+
+        dimension = Dict{VT,Int}()
+        for i = 1:vlen
+            var = variables[i]
+            dom = domain[var]
+            if dims[i] != length(dom)
+                error("Variable $(var) on dimension $(i) doesn't match domain size")
+            end
+            dimension[var] = i
+        end
+
+        return new(variables, dimension, domain, table) 
+    end
 end
 
-# Constructor from an ordered list of variables, with a probability table
-# where the dimension order matches the variable order, and a map from each
-# variable to a list of domain values of size equal to the table dimension
+# Use inner constructor
 function PotArray{VT,DT}(variables::Vector{VT}, table::Array{Float64},
                          domain::Dict{VT,Vector{DT}})
-    vlen = length(variables)
-    dims = size(table)
-    dlen = length(keys(domain))
-    if vlen != dlen
-        error("The number of domain keys must equal the number of variables")
-    end
-
-    dimension = Dict{VT,Int}()
-    for i = 1:vlen
-        var = variables[i]
-        dom = domain[var]
-        if dims[i] != length(dom)
-            error("Variable $(var) on table dimension $(i) doesn't match domain size")
-        end
-        dimension[var] = i
-    end
-
-    return PotArray(variables, dimension, domain, table) 
+    return PotArray{VT,DT}(variables, table, domain)
 end
 
 # Constructor without defined domains, which will default to sequential ints
@@ -47,7 +53,7 @@ function PotArray{VT}(variables::Vector{VT}, table::Array{Float64})
         domain[var] = [1:dims[i]]
     end
 
-    return PotArray(variables, table, domain)
+    return PotArray{VT,Int}(variables, table, domain)
 end
 
 # Constructor without table of probabilities, which will be initiliased to zeros
@@ -62,7 +68,7 @@ function PotArray{VT,DT}(variables::Vector{VT}, domain::Dict{VT,Vector{DT}})
     end
 
     table = zeros(tableDims...)
-    return PotArray(variables, table, domain)
+    return PotArray{VT,DT}(variables, table, domain)
 end
 
 # PotArray operations
