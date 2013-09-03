@@ -9,10 +9,10 @@ typealias Indices{T<:Integer} Union(Integer, Vector{T})
 # SquareMatrix: number of rows equal the number of columns
 type SquareMatrix{T<:Number} <: AbstractMatrix{T}
     M::Matrix{T}
-    
+
     function SquareMatrix(A::Matrix)
         if size(A,1) != size(A,2)
-            throw(DimensionMismatch("Matrix must be square."))
+            error("Matrix must be square.")
         end
         return new(A)
     end
