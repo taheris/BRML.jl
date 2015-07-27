@@ -27,7 +27,7 @@ To get the latest list of Julia packages, run the `Pkg.update()` command:
 julia> Pkg.update()
 ```
 
-As the toolbox is still in development, this package and its dependencies will need to be retrieved manually from this repository. To do so, change directory to the Julia package directory at the command line. This will be located at `~/.julia` for Linux and OS X, or `%APPDATA%/julia/packages` for Windows by default.
+As the toolbox is still in development, this package and its dependencies will need to be retrieved manually from this repository. To do so, change directory to the Julia package directory at the command line. This will be located at `~/.julia/<version>` for Linux and OS X, or `%APPDATA%/julia/packages` for Windows by default.
 
 From the package directory, issue the following command:
 
