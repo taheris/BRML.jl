@@ -121,7 +121,7 @@ function domainIndices{VT,DT}(pot::PotArray{VT,DT}, vals...)
             var = pot.variables[i]
             dom = pot.domain[var]
             indices[i] = vectorIndex(dom, val)
-        elseif isa(val, Range1)
+        elseif isa(val, UnitRange)
             indices[i] = 0
         else
             error("Not a valid variable domain: $(val)")

@@ -100,9 +100,9 @@ function push_edge!{V,E}(g::UndirectedGraph, edge::E, u::V, v::V, ui::Int, vi::I
 end
 
 # type aliases for directed and undirected integer graphs
-typealias DirectedIntGraph DirectedGraph{Int,Edge{Int},Range1{Int},Vector{Edge{Int}},
+typealias DirectedIntGraph DirectedGraph{Int,Edge{Int},UnitRange{Int},Vector{Edge{Int}},
                                          Vector{Vector{Int}},Vector{Vector{Edge{Int}}}}
-typealias UndirectedIntGraph UndirectedGraph{Int,Edge{Int},Range1{Int},Vector{Edge{Int}},
+typealias UndirectedIntGraph UndirectedGraph{Int,Edge{Int},UnitRange{Int},Vector{Edge{Int}},
                                              Vector{Vector{Int}},Vector{Vector{Edge{Int}}}}
 
 for graph_type in (:DirectedIntGraph, :UndirectedIntGraph)

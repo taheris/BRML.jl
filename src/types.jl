@@ -4,7 +4,7 @@ typealias NumMatrix{T<:Number} Matrix{T}
 typealias NumArray{T<:Number,N} Array{T,N}
 
 # Indices are a vector of integers or a single integer
-typealias Indices{T<:Integer} Union(Integer, Vector{T})
+typealias Indices{T<:Integer} Union{Integer, Vector{T}}
 
 # SquareMatrix: number of rows equal the number of columns
 type SquareMatrix{T<:Number} <: AbstractMatrix{T}
